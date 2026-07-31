@@ -1,15 +1,79 @@
 @import "tailwindcss";
 
 :root {
+
+/* COLORS VARIABLES */
+
   --background: #ffffff;
   --foreground: #171717;
+  --white: #ffffff;
+  --light-gray: #E3E3E3;
+  --dark-gray: #8B8B8B;
+  --black: #000000;
+  --deep-blue: #0C182A;
+  --miller-blue: #1084C5;
+
+/* TYPOGRAPHY VARIABLES */
+
+/* Text Size Desktop */
+--text-h1-desktop: 48px;
+--text-h2-desktop: 36px;
+--text-h3-desktop: 28px;
+--text-b1-desktop: 24px;
+--text-b2-desktop: 22px;
+--text-button-desktop: 20px;
+
+/* Text Size Mobile */
+--text-h1-mobile: 36px;
+--text-h2-mobile: 28px;
+--text-h3-mobile: 24px;
+--text-h4-mobile: 18px;
+--text-b1-mobile: 16px;
+--text-b2-mobile: 14px;
+
+/* Line Height Desktop */
+--leading-h1-desktop: 60px;
+--leading-h2-desktop: 48px;
+--leading-h3-desktop: 36px;
+--leading-b1-desktop: 36px;
+--leading-b2-desktop: 32px;
+--leading-button-desktop: 20px;
+
+/* Line Height Mobile */
+--leading-h1-mobile: 20px;
+--leading-h2-mobile: 32px;
+--leading-h3-mobile: 32px;
+--leading-h4-mobile: 20px;
+--leading-b1-mobile: 24px;
+--leading-b2-mobile: 20px;
+
+/* SPACING VARIABLES */
+
+--space-xs: 4px;
+--space-sm: 8px;
+--space-md: 12px;
+--space-lg: 16px;
+--space-xl: 24px;
+--space-2xl: 32px;
+--space-3xl: 48px;
+--space-4xl: 64px;
+--space-5xl: 80px;
+--space-6xl: 96px;
+
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --color-white: var(--white);
+  --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
+  --color-black: var(--black);
+  --color-deep-blue: var(--deep-blue);
+  --color-miller-blue: var(--miller-blue);
+
+  --font-sans: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,3 +88,81 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+
+  /* Mobile (Default) */
+  .h1 {
+    @apply font-black;
+    font-size: var(--text-h1-mobile);
+    line-height: var(--leading-h1-mobile);
+  }
+
+  .h2 {
+    @apply font-extrabold;
+    font-size: var(--text-h2-mobile);
+    line-height: var(--leading-h2-mobile);
+  }
+
+  .h3 {
+    @apply font-bold;
+    font-size: var(--text-h3-mobile);
+    line-height: var(--leading-h3-mobile);
+  }
+
+  .h4 {
+    @apply font-bold;
+    font-size: var(--text-h4-mobile);
+    line-height: var(--leading-h4-mobile);
+  }
+
+  .b1 {
+    @apply font-normal;
+    font-size: var(--text-b1-mobile);
+    line-height: var(--leading-b1-mobile);
+  }
+
+  .b2 {
+    @apply font-normal;
+    font-size: var(--text-b2-mobile);
+    line-height: var(--leading-b2-mobile);
+  }
+
+  .button-text {
+    @apply font-bold;
+    font-size: var(--text-button-desktop);
+    line-height: var(--leading-button-desktop);
+  }
+
+   /* Desktop */
+   @media (min-width: 768px) {
+
+    .h1 {
+      font-size: var(--text-h1-desktop);
+      line-height: var(--leading-h1-desktop);
+    }
+
+    .h2 {
+      font-size: var(--text-h2-desktop);
+      line-height: var(--leading-h2-desktop);
+    }
+
+    .h3 {
+      font-size: var(--text-h3-desktop);
+      line-height: var(--leading-h3-desktop);
+    }
+
+    .b1 {
+      font-size: var(--text-b1-desktop);
+      line-height: var(--leading-b1-desktop);
+    }
+
+    .b2 {
+      font-size: var(--text-b2-desktop);
+      line-height: var(--leading-b2-desktop);
+    }
+
+  }
+
+}
+
