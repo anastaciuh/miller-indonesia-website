@@ -22,14 +22,18 @@ const PRODUCT_BRANDS = [
 export default function Navbar() {
   const pathname = usePathname();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] =
+    useState(false);
+
+  const [isProductsOpen, setIsProductsOpen] =
+    useState(false);
 
   const [pressedLink, setPressedLink] =
     useState<string | null>(null);
 
   const [pressedBrand, setPressedBrand] =
     useState<string | null>(null);
+
 
   // ==================================================
   // DESKTOP UNDERLINE
@@ -51,12 +55,25 @@ export default function Navbar() {
   const [underlineReady, setUnderlineReady] =
     useState(false);
 
+
+  // ==================================================
+  // RESET NAVBAR STATE WHEN PAGE CHANGES
+  // ==================================================
+
+  useEffect(() => {
+    setIsProductsOpen(false);
+    setPressedBrand(null);
+    setPressedLink(null);
+  }, [pathname]);
+
+
   // ==================================================
   // MOBILE MENU ITEM
   // ==================================================
 
   const menuItemClass = (href: string) => {
-    const isPressed = pressedLink === href;
+    const isPressed =
+      pressedLink === href;
 
     return `block px-4 py-4 transition-colors duration-200 ease-out ${
       isPressed
@@ -64,6 +81,7 @@ export default function Navbar() {
         : "bg-transparent text-white"
     }`;
   };
+
 
   // ==================================================
   // MOBILE BRAND
@@ -81,11 +99,14 @@ export default function Navbar() {
     }`;
   };
 
+
   // ==================================================
   // DESKTOP ACTIVE LINK
   // ==================================================
 
-  const isDesktopLinkActive = (href: string) => {
+  const isDesktopLinkActive = (
+    href: string
+  ) => {
     if (href === "/") {
       return pathname === "/";
     }
@@ -96,6 +117,7 @@ export default function Navbar() {
     );
   };
 
+
   // ==================================================
   // FIND ACTIVE DESKTOP LINK
   // ==================================================
@@ -105,15 +127,16 @@ export default function Navbar() {
       return "/";
     }
 
-    if (pathname.startsWith("/products")) {
-      return "/products";
-    }
+    // Products is NOT a page.
+    // It only opens the dropdown.
 
     if (pathname.startsWith("/blog")) {
       return "/blog";
     }
 
-    if (pathname.startsWith("/service-center")) {
+    if (
+      pathname.startsWith("/service-center")
+    ) {
       return "/service-center";
     }
 
@@ -123,6 +146,7 @@ export default function Navbar() {
 
     return null;
   };
+
 
   // ==================================================
   // UPDATE UNDERLINE POSITION
@@ -139,7 +163,9 @@ export default function Navbar() {
       }
 
       const activeLink =
-        desktopLinkRefs.current[activeHref];
+        desktopLinkRefs.current[
+          activeHref
+        ];
 
       const nav =
         desktopNavRef.current;
@@ -155,14 +181,19 @@ export default function Navbar() {
         nav.getBoundingClientRect();
 
       setUnderlineStyle({
-        left: linkRect.left - navRect.left,
-        width: linkRect.width,
+        left:
+          linkRect.left -
+          navRect.left,
+        width:
+          linkRect.width,
       });
 
       setUnderlineReady(true);
     };
 
-    requestAnimationFrame(updateUnderline);
+    requestAnimationFrame(
+      updateUnderline
+    );
 
     window.addEventListener(
       "resize",
@@ -176,6 +207,7 @@ export default function Navbar() {
       );
     };
   }, [pathname]);
+
 
   // ==================================================
   // RENDER
@@ -191,7 +223,9 @@ export default function Navbar() {
       <div className="hidden md:block">
 
         {/* TOP NAVBAR */}
+
         <div className="w-full">
+
           <Image
             src="/images/home/navbar-top.png"
             alt="Miller Indonesia"
@@ -200,9 +234,12 @@ export default function Navbar() {
             className="w-full h-auto"
             priority
           />
+
         </div>
 
+
         {/* BOTTOM NAVBAR */}
+
         <div className="w-full bg-[#0C182A]">
 
           <div
@@ -211,14 +248,16 @@ export default function Navbar() {
           >
 
             {/* HOME */}
+
             <Link
               href="/"
               ref={(el) => {
-                desktopLinkRefs.current["/"] = el;
+                desktopLinkRefs.current["/"] =
+                  el;
               }}
-              onClick={() =>
-                setIsProductsOpen(false)
-              }
+              onClick={() => {
+                setIsProductsOpen(false);
+              }}
               className={`text-white transition-all duration-200 ${
                 isDesktopLinkActive("/")
                   ? "font-bold"
@@ -226,49 +265,50 @@ export default function Navbar() {
               }`}
               aria-label="Home"
             >
+
               <House
                 size={20}
                 strokeWidth={3}
                 className="text-white"
               />
+
             </Link>
 
 
             {/* PRODUCTS */}
-            <Link
-              href="/products"
-              ref={(el) => {
-                desktopLinkRefs.current[
-                  "/products"
-                ] = el;
-              }}
-              onClick={() =>
+
+            <button
+              type="button"
+              onClick={() => {
                 setIsProductsOpen(
                   (open) => !open
-                )
+                );
+              }}
+              className="text-white transition-all duration-200 b1"
+              aria-expanded={
+                isProductsOpen
               }
-              className={`text-white transition-all duration-200 ${
-                isDesktopLinkActive("/products")
-                  ? "font-bold"
-                  : "font-normal"
-              }`}
             >
               Products
-            </Link>
+            </button>
 
 
             {/* BLOG */}
+
             <Link
               href="/blog"
               ref={(el) => {
-                desktopLinkRefs.current["/blog"] =
-                  el;
+                desktopLinkRefs.current[
+                  "/blog"
+                ] = el;
               }}
-              onClick={() =>
-                setIsProductsOpen(false)
-              }
-              className={`text-white transition-all duration-200 ${
-                isDesktopLinkActive("/blog")
+              onClick={() => {
+                setIsProductsOpen(false);
+              }}
+              className={`text-white b1 transition-all duration-200 ${
+                isDesktopLinkActive(
+                  "/blog"
+                )
                   ? "font-bold"
                   : "font-normal"
               }`}
@@ -278,6 +318,7 @@ export default function Navbar() {
 
 
             {/* SERVICE */}
+
             <Link
               href="/service-center"
               ref={(el) => {
@@ -285,10 +326,10 @@ export default function Navbar() {
                   "/service-center"
                 ] = el;
               }}
-              onClick={() =>
-                setIsProductsOpen(false)
-              }
-              className={`text-white transition-all duration-200 ${
+              onClick={() => {
+                setIsProductsOpen(false);
+              }}
+              className={`text-white b1 transition-all duration-200 ${
                 isDesktopLinkActive(
                   "/service-center"
                 )
@@ -301,6 +342,7 @@ export default function Navbar() {
 
 
             {/* CONTACT */}
+
             <Link
               href="/contact"
               ref={(el) => {
@@ -308,11 +350,13 @@ export default function Navbar() {
                   "/contact"
                 ] = el;
               }}
-              onClick={() =>
-                setIsProductsOpen(false)
-              }
-              className={`text-white transition-all duration-200 ${
-                isDesktopLinkActive("/contact")
+              onClick={() => {
+                setIsProductsOpen(false);
+              }}
+              className={`text-white b1 transition-all duration-200 ${
+                isDesktopLinkActive(
+                  "/contact"
+                )
                   ? "font-bold"
                   : "font-normal"
               }`}
@@ -332,8 +376,10 @@ export default function Navbar() {
                   : "opacity-0"
               }`}
               style={{
-                left: underlineStyle.left,
-                width: underlineStyle.width,
+                left:
+                  underlineStyle.left,
+                width:
+                  underlineStyle.width,
               }}
             />
 
@@ -355,6 +401,7 @@ export default function Navbar() {
             <div className="container-custom grid grid-cols-2 gap-x-32 px-15 py-6">
 
               {/* COLUMN 1 */}
+
               <div className="flex flex-col gap-5">
 
                 {PRODUCT_BRANDS
@@ -362,8 +409,10 @@ export default function Navbar() {
                   .map((brand) => {
 
                     const isActive =
-                      pathname === brand.href ||
-                      pressedBrand === brand.href;
+                      pathname ===
+                        brand.href ||
+                      pressedBrand ===
+                        brand.href;
 
                     return (
                       <Link
@@ -371,8 +420,9 @@ export default function Navbar() {
                         href={brand.href}
                         onClick={() => {
                           setPressedBrand(
-                            brand.href
+                            null
                           );
+
                           setIsProductsOpen(
                             false
                           );
@@ -392,6 +442,7 @@ export default function Navbar() {
 
 
               {/* COLUMN 2 */}
+
               <div className="flex flex-col gap-5">
 
                 {PRODUCT_BRANDS
@@ -399,8 +450,10 @@ export default function Navbar() {
                   .map((brand) => {
 
                     const isActive =
-                      pathname === brand.href ||
-                      pressedBrand === brand.href;
+                      pathname ===
+                        brand.href ||
+                      pressedBrand ===
+                        brand.href;
 
                     return (
                       <Link
@@ -408,8 +461,9 @@ export default function Navbar() {
                         href={brand.href}
                         onClick={() => {
                           setPressedBrand(
-                            brand.href
+                            null
                           );
+
                           setIsProductsOpen(
                             false
                           );
@@ -443,6 +497,7 @@ export default function Navbar() {
       <div className="relative z-60 md:hidden">
 
         {/* TOP NAVBAR IMAGE */}
+
         <Image
           src="/images/home/mobile-navbar.png"
           alt="Miller Indonesia"
@@ -459,20 +514,23 @@ export default function Navbar() {
 
 
         {/* HAMBURGER */}
+
         <button
           type="button"
-          onClick={() =>
+          onClick={() => {
             setIsMenuOpen(
               (open) => !open
-            )
-          }
+            );
+          }}
           className="absolute top-1/2 right-3 z-60 flex h-10 w-10 -translate-y-1/2 items-center justify-center pt-7 bg-transparent"
           aria-label={
             isMenuOpen
               ? "Close menu"
               : "Open menu"
           }
-          aria-expanded={isMenuOpen}
+          aria-expanded={
+            isMenuOpen
+          }
         >
 
           <span
@@ -481,6 +539,7 @@ export default function Navbar() {
           >
 
             {/* TOP */}
+
             <span
               className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
                 isMenuOpen
@@ -489,7 +548,9 @@ export default function Navbar() {
               }`}
             />
 
+
             {/* MIDDLE */}
+
             <span
               className={`absolute left-0 top-2.75 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
                 isMenuOpen
@@ -498,7 +559,9 @@ export default function Navbar() {
               }`}
             />
 
+
             {/* BOTTOM */}
+
             <span
               className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
                 isMenuOpen
@@ -527,15 +590,18 @@ export default function Navbar() {
         aria-hidden={!isMenuOpen}
       >
 
-        <div className="px-10 pt-32">
+        <div className="px-10 pt-32 h4 font-normal">
 
           {/* HOME */}
+
           <div className="border-b border-white py-2">
+
             <Link
               href="/"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsProductsOpen(false);
+                setPressedBrand(null);
               }}
               onPointerDown={() =>
                 setPressedLink("/")
@@ -553,23 +619,30 @@ export default function Navbar() {
             >
               Home
             </Link>
+
           </div>
 
 
           {/* PRODUCTS */}
+
           <div className="border-b border-white">
 
             <button
               type="button"
-              onClick={() =>
+              onClick={() => {
                 setIsProductsOpen(
                   (open) => !open
-                )
-              }
+                );
+              }}
               className="flex w-full items-center justify-between px-4 py-6 text-white"
-              aria-expanded={isProductsOpen}
+              aria-expanded={
+                isProductsOpen
+              }
             >
-              <span>Products</span>
+
+              <span>
+                Products
+              </span>
 
               <ChevronUp
                 size={18}
@@ -579,10 +652,12 @@ export default function Navbar() {
                     : "rotate-180"
                 }`}
               />
+
             </button>
 
 
             {/* PRODUCT BRANDS */}
+
             <div
               className={`grid transition-[grid-template-rows] duration-300 ${
                 isProductsOpen
@@ -610,8 +685,19 @@ export default function Navbar() {
                           brand.href
                         )}
                         onClick={() => {
-                          setIsMenuOpen(false);
-                          setIsProductsOpen(false);
+                          // Reset everything
+                          // before navigating
+                          setPressedBrand(
+                            null
+                          );
+
+                          setIsProductsOpen(
+                            false
+                          );
+
+                          setIsMenuOpen(
+                            false
+                          );
                         }}
                         onPointerDown={() =>
                           setPressedBrand(
@@ -619,13 +705,19 @@ export default function Navbar() {
                           )
                         }
                         onPointerUp={() =>
-                          setPressedBrand(null)
+                          setPressedBrand(
+                            null
+                          )
                         }
                         onPointerCancel={() =>
-                          setPressedBrand(null)
+                          setPressedBrand(
+                            null
+                          )
                         }
                         onPointerLeave={() =>
-                          setPressedBrand(null)
+                          setPressedBrand(
+                            null
+                          )
                         }
                       >
                         {brand.label}
@@ -643,12 +735,15 @@ export default function Navbar() {
 
 
           {/* BLOG */}
+
           <div className="border-b border-white py-2">
+
             <Link
               href="/blog"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsProductsOpen(false);
+                setPressedBrand(null);
               }}
               onPointerDown={() =>
                 setPressedLink("/blog")
@@ -662,23 +757,31 @@ export default function Navbar() {
               onPointerLeave={() =>
                 setPressedLink(null)
               }
-              className={menuItemClass("/blog")}
+              className={menuItemClass(
+                "/blog"
+              )}
             >
               Blog
             </Link>
+
           </div>
 
 
           {/* SERVICE */}
+
           <div className="border-b border-white py-2">
+
             <Link
               href="/service-center"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsProductsOpen(false);
+                setPressedBrand(null);
               }}
               onPointerDown={() =>
-                setPressedLink("/service-center")
+                setPressedLink(
+                  "/service-center"
+                )
               }
               onPointerUp={() =>
                 setPressedLink(null)
@@ -695,19 +798,25 @@ export default function Navbar() {
             >
               Service
             </Link>
+
           </div>
 
 
           {/* CONTACT */}
+
           <div className="py-2">
+
             <Link
               href="/contact"
               onClick={() => {
                 setIsMenuOpen(false);
                 setIsProductsOpen(false);
+                setPressedBrand(null);
               }}
               onPointerDown={() =>
-                setPressedLink("/contact")
+                setPressedLink(
+                  "/contact"
+                )
               }
               onPointerUp={() =>
                 setPressedLink(null)
@@ -724,6 +833,7 @@ export default function Navbar() {
             >
               Contact Us
             </Link>
+
           </div>
 
         </div>
