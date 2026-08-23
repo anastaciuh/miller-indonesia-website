@@ -59,7 +59,7 @@ export default function CategoryList() {
           <button
             type="button"
             onClick={() => handleScroll("left")}
-            className="relative h-[52px] w-[52px]"
+            className="relative h-[40px] w-[40px]"
           >
             <Image
               src="/component/button-left.jpg"
@@ -73,7 +73,7 @@ export default function CategoryList() {
           <button
             type="button"
             onClick={() => handleScroll("right")}
-            className="relative h-[52px] w-[52px]"
+            className="relative h-[40px] w-[40px]"
           >
             <Image
               src="/component/button-right.jpg"
@@ -104,7 +104,7 @@ export default function CategoryList() {
         <div className="flex w-max min-w-max gap-8">
   
           {/* Extra space kiri */}
-          <div className="w-[5px] shrink-0" />
+          <div className="w-[2px] shrink-0" />
   
           {MILLER_CATEGORIES.map((category) => (
             <CategoryCard
@@ -114,7 +114,7 @@ export default function CategoryList() {
           ))}
   
           {/* Extra space kanan */}
-          <div className="w-[5px] shrink-0" />
+          <div className="w-[2px] shrink-0" />
   
         </div>
       </div>
