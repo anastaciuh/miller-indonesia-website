@@ -4,9 +4,13 @@ import CategoryList from "@/components/layout/CategoryList";
 import ProductList from "@/components/layout/ProductList";
 import ContactButton from "@/components/layout/ContactButton";
 
+import { MILLER_CATEGORIES } from "@/constants/miller-categories";
+import { JASIC_CATEGORIES } from "@/constants/jasic-categories";
 import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
 
 const BRANDS = {
+
+  // =========================== Miller ===========================
   miller: {
     name: "Miller",
     logo: "/image/logo/miller.jpg",
@@ -23,9 +27,11 @@ const BRANDS = {
       "Kami mengutamakan kemitraan dan kualitas kerja. Produk kami dirancang bersama para pengguna untuk berbagai aplikasi di bidang manufaktur, fabrikasi, konstruksi, penerbangan, olahraga otomotif, pendidikan, pertanian, dan kelautan.",
     ],
 
-    type: "category",
+    type: "category" as const,
+    categories: MILLER_CATEGORIES,
   },
 
+  //=========================== Hypertherm ===========================
   hypertherm: {
     name: "Hypertherm",
     logo: "/image/logo/hypertherm.jpg",
@@ -42,7 +48,29 @@ const BRANDS = {
       "Sistem plasma Hypertherm dipercaya dan digunakan oleh lebih banyak bisnis dan pengguna dibandingkan merek lainnya. Jelajahi berbagai sistem pemotongan, gouging, dan penandaan plasma dari seri Powermax® Air Plasma kami.",
     ],
 
-    type: "product",
+    type: "product" as const,
+    products: HYPERTHERM_PRODUCTS,
+  },
+
+//=========================== Jasic ===========================
+  jasic: {
+    name: "Jasic",
+    logo: "/image/logo/jasic.jpg",
+
+    // Desktop
+    logoWidth: 324,
+    logoHeight: 113,
+
+    // Mobile
+    mobileLogoWidth: 233,
+
+    description: [
+      "JASIC merupakan produsen terpercaya untuk peralatan pengelasan, pemotongan, dan peralatan industri canggih yang menghadirkan teknologi inovatif, performa andal, serta solusi yang efisien bagi para profesional di seluruh dunia. Dengan komitmen yang kuat terhadap kualitas dan inovasi berkelanjutan.",
+      "Mulai dari pengelasan dan pemotongan plasma hingga solusi laser, JASIC mendukung berbagai industri, termasuk manufaktur, fabrikasi, konstruksi, otomotif, perkapalan, energi, dan pengolahan logam.",
+    ],
+
+    type: "category" as const,
+    categories: JASIC_CATEGORIES,
   },
 };
 
@@ -102,11 +130,15 @@ export default async function BrandPage({
 
       {/* Product / Category */}
       <section className="mt-16">
-        {brandData.type === "category" && <CategoryList />}
+        {/* Category Brand */}
+        {brandData.type === "category" && (
+          <CategoryList categories={brandData.categories} />
+        )}
 
+        {/* Product Brand */}
         {brandData.type === "product" && (
           <>
-            <ProductList products={HYPERTHERM_PRODUCTS} />
+            <ProductList products={brandData.products} />
 
             {/* Mobile Contact Button */}
             <div className="mt-16 px-10 md:hidden">
