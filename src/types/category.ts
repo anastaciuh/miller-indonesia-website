@@ -1,6 +1,5 @@
-export type Product = {
+export type Category = {
     image: string;
     title: string;
     description: string;
-    pdf: string;
   };

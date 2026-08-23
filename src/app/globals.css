@@ -40,7 +40,7 @@
 --leading-button-desktop: 20px;
 
 /* Line Height Mobile */
---leading-h1-mobile: 20px;
+--leading-h1-mobile: 40px;
 --leading-h2-mobile: 32px;
 --leading-h3-mobile: 32px;
 --leading-h4-mobile: 26px;
@@ -74,13 +74,6 @@
   --color-miller-blue: var(--miller-blue);
 
   --font-sans: var(--font-inter);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
@@ -166,3 +159,18 @@ body {
 
 }
 
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
