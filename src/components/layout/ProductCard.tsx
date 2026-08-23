@@ -37,9 +37,9 @@ export default function ProductCard({
           href={pdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-1.5 rounded-lg bg-light-gray px-4 py-2 text-[18px] font-medium text-black transition hover:bg-gray-200"
+          className="mt-6 inline-flex items-center gap-2 rounded-md bg-light-gray px-2 py-1 text-[14px] font-medium text-black transition hover:bg-gray-200"
           >
-          <FileText size={20} strokeWidth={2} />
+          <FileText size={16} strokeWidth={2} />
           <span>Full Specification</span>
         </a>
       </div>
