@@ -52,8 +52,8 @@ GOW KITA MULAI MASUK KE PANDUANNYA
 2. `git checkout` artinya switch to another branch. (ex; git checkout main --> artinya switch ke branch main)
 3. `git checkout -b` artinya create and switch to a new branch sekaligus. (ex; git checkout -b feature/navbar --> creates new branch & immidiately switches to it)
 4. `git pull` artinya downloads the latest changes from github (ex; git pull origin main)
-5. `git commit` artinya saves your changes locally (ex; git commit -m "feat: add homepage hero")
-6. `git add` artinya marks files that should be included in the next commit. (ex; git add . --> the dot (`.`) means "add all changed files.")
+5. `git add` artinya marks files that should be included in the next commit. (ex; git add . --> the dot (`.`) means "add all changed files.")
+6. `git commit` artinya saves your changes locally (ex; git commit -m "feat: add homepage hero")
 7. `git push` artinya uploads your commits to GitHub. (ex; git push origin feature/navbar)
 8. `git fetch` artinya sees information about new commits from GitHub without changing your local files. (ex; git fetch --> useful when you want to check for updates first.)
 9.`pull request` artinya request asking the team to merge your branch into another branch.
