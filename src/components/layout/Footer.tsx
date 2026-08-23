@@ -56,7 +56,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#0C182A] text-white">
+    <footer className="w-full bg-[#0C182A] text-white mt-32">
 
       {/* ================================================== */}
       {/* DESKTOP FOOTER */}
