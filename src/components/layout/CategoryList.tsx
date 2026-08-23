@@ -1,14 +1,27 @@
 "use client";
 
 import { useRef, useState } from "react";
-import CategoryCard from "@/components/layout/CategoryCard";
-import { MILLER_CATEGORIES } from "@/constants/miller-categories";
 import Image from "next/image";
 
-export default function CategoryList() {
+import CategoryCard from "@/components/layout/CategoryCard";
+
+type Category = {
+  image: string;
+  title: string;
+  description: string;
+};
+
+type CategoryListProps = {
+  categories: Category[];
+};
+
+export default function CategoryList({
+  categories,
+}: CategoryListProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [isDragging, setIsDragging] = useState(false);
+
   const startX = useRef(0);
   const scrollStart = useRef(0);
 
@@ -53,7 +66,7 @@ export default function CategoryList() {
         <div className="h1 font-black text-black">
           Product Category
         </div>
-  
+
         <div className="flex gap-4">
           {/* LEFT */}
           <button
@@ -68,7 +81,7 @@ export default function CategoryList() {
               className="object-contain"
             />
           </button>
-  
+
           {/* RIGHT */}
           <button
             type="button"
@@ -84,7 +97,7 @@ export default function CategoryList() {
           </button>
         </div>
       </div>
-  
+
       {/* CATEGORY CAROUSEL */}
       <div
         ref={containerRef}
@@ -102,20 +115,18 @@ export default function CategoryList() {
         }}
       >
         <div className="flex w-max min-w-max gap-8">
-  
           {/* Extra space kiri */}
           <div className="w-[2px] shrink-0" />
-  
-          {MILLER_CATEGORIES.map((category) => (
+
+          {categories.map((category) => (
             <CategoryCard
               key={category.title}
               {...category}
             />
           ))}
-  
+
           {/* Extra space kanan */}
           <div className="w-[2px] shrink-0" />
-  
         </div>
       </div>
     </div>
