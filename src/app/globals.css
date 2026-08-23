@@ -16,34 +16,34 @@
 /* TYPOGRAPHY VARIABLES */
 
 /* Text Size Desktop */
---text-h1-desktop: 48px;
---text-h2-desktop: 36px;
---text-h3-desktop: 28px;
---text-b1-desktop: 24px;
---text-b2-desktop: 22px;
+--text-h1-desktop: 34px;
+--text-h2-desktop: 24px;
+--text-h3-desktop: 18px;
+--text-b1-desktop: 16px;
+--text-b2-desktop: 14px;
 --text-button-desktop: 20px;
 
 /* Text Size Mobile */
---text-h1-mobile: 36px;
---text-h2-mobile: 28px;
---text-h3-mobile: 24px;
+--text-h1-mobile: 32px;
+--text-h2-mobile: 26px;
+--text-h3-mobile: 22px;
 --text-h4-mobile: 18px;
---text-b1-mobile: 16px;
---text-b2-mobile: 14px;
+--text-b1-mobile: 14px;
+--text-b2-mobile: 12px;
 
 /* Line Height Desktop */
 --leading-h1-desktop: 60px;
 --leading-h2-desktop: 48px;
 --leading-h3-desktop: 36px;
---leading-b1-desktop: 36px;
---leading-b2-desktop: 32px;
+--leading-b1-desktop: 22px;
+--leading-b2-desktop: 18px;
 --leading-button-desktop: 20px;
 
 /* Line Height Mobile */
 --leading-h1-mobile: 20px;
 --leading-h2-mobile: 32px;
 --leading-h3-mobile: 32px;
---leading-h4-mobile: 20px;
+--leading-h4-mobile: 26px;
 --leading-b1-mobile: 24px;
 --leading-b2-mobile: 20px;
 
