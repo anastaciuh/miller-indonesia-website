@@ -141,7 +141,7 @@ Use `lucide-react`. Do not download random SVG icons unless necessary.
 4. Always pull the latest changes before creating a new branch.
 
 Alurnya codingnya gini ya:
-    git checkout main --> git pull origin main --> git checkout -b feature/<feature-name> -->  Start Coding -->  git add . --> git commit -m "feat: ..." --> git push origin feature/<feature-name> -->  Create Pull Request (GitHub) --> Review & Merge to main --> git checkout main --> git pull origin main --> Ready for the next feature
+    git checkout main --> git pull origin main --> git checkout -b feature/<feature-name> -->  Start Coding -->  git add . --> git commit -m "feat: ..." --> simulasi pengecekan branch dan main --> git push origin feature/<feature-name> -->  Create Pull Request (GitHub) --> Review & Merge to main --> git checkout main --> git pull origin main --> Ready for the next feature
 
 5. Commit Message Convention
 

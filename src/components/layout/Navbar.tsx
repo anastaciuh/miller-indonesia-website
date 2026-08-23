@@ -8,14 +8,14 @@ import { House, ChevronUp } from "lucide-react";
 
 const PRODUCT_BRANDS = [
   { href: "/products/miller", label: "Miller" },
-  { href: "/products/interweld", label: "Interweld" },
   { href: "/products/hypertherm", label: "Hypertherm" },
-  { href: "/products/interflex", label: "Interflex" },
   { href: "/products/jasic", label: "Jasic" },
-  { href: "/products/weldcraft", label: "Weldcraft" },
   { href: "/products/hobart", label: "Hobart" },
-  { href: "/products/stanley-tools", label: "Stanley Tools" },
   { href: "/products/bernard", label: "Bernard" },
+  { href: "/products/interweld", label: "Interweld" },
+  { href: "/products/interflex", label: "Interflex" },
+  { href: "/products/weldcraft", label: "Weldcraft" },
+  { href: "/products/stanley-tools", label: "Stanley Tools" },
   { href: "/products/gosave", label: "GoSave" },
 ] as const;
 
@@ -224,16 +224,30 @@ export default function Navbar() {
 
         {/* TOP NAVBAR */}
 
-        <div className="w-full">
+        <div className="w-full bg-[#168BC7]">
 
-          <Image
-            src="/images/home/navbar-top.png"
-            alt="Miller Indonesia"
-            width={1920}
-            height={48}
-            className="w-full h-auto"
-            priority
-          />
+          <div className="container-custom flex items-center px-10">
+
+            <div className="flex items-center gap-3 h-[40px]">
+
+              <Image
+                  src="/images/home/logo-desktop.png"
+                  alt="Miller Indonesia"
+                  width={1920}
+                  height={48}
+                  className="h-auto w-[145px]"
+                  priority
+              />
+
+              <span className="h-6 w-[1px] bg-white/80" />
+
+              <span className="b2 text-white">
+                Distributor Miller Welding Machine Hypertherm Plasma Cutting
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -490,89 +504,113 @@ export default function Navbar() {
       </div>
 
 
-      {/* ================================================== */}
-      {/* MOBILE NAVBAR */}
-      {/* ================================================== */}
+    {/* ================================================== */}
+    {/* MOBILE NAVBAR */}
+    {/* ================================================== */}
 
-      <div className="relative z-60 md:hidden">
+    <div className="relative z-60 md:hidden">
 
-        {/* TOP NAVBAR IMAGE */}
+    <div 
+    className="w-full bg-[#168BC7]"
+    style={{
+      paddingTop: "env(safe-area-inset-top)",
+    }}
+    >
 
-        <Image
-          src="/images/home/mobile-navbar.png"
-          alt="Miller Indonesia"
-          width={390}
-          height={80}
-          unoptimized
-          className={`h-auto w-full transition-opacity duration-300 ${
-            isMenuOpen
-              ? "opacity-0"
-              : "opacity-100"
-          }`}
-          priority
-        />
+      <div className="container-custom px-6">
 
+        <div className="flex h-[72px] items-center gap-3">
 
-        {/* HAMBURGER */}
+          {/* LOGO */}
 
-        <button
-          type="button"
-          onClick={() => {
-            setIsMenuOpen(
-              (open) => !open
-            );
-          }}
-          className="absolute top-1/2 right-3 z-60 flex h-10 w-10 -translate-y-1/2 items-center justify-center pt-7 bg-transparent"
-          aria-label={
-            isMenuOpen
-              ? "Close menu"
-              : "Open menu"
-          }
-          aria-expanded={
-            isMenuOpen
-          }
-        >
+          <Image
+            src="/images/home/logo-mobile.png"
+            alt="Miller Indonesia"
+            width={1920}
+            height={48}
+            className="h-auto w-[105px] shrink-0"
+            priority
+          />
 
-          <span
-            className="relative block h-6 w-6"
-            aria-hidden
-          >
+          {/* DIVIDER */}
 
-            {/* TOP */}
+          <span className="h-10 w-px shrink-0 bg-white/80" />
 
-            <span
-              className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
-                isMenuOpen
-                  ? "top-2.75 rotate-45"
-                  : "top-1"
-              }`}
-            />
+          {/* DESCRIPTION */}
 
-
-            {/* MIDDLE */}
-
-            <span
-              className={`absolute left-0 top-2.75 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
-                isMenuOpen
-                  ? "scale-x-0 opacity-0"
-                  : "opacity-100"
-              }`}
-            />
-
-
-            {/* BOTTOM */}
-
-            <span
-              className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
-                isMenuOpen
-                  ? "top-2.75 -rotate-45"
-                  : "top-4.5"
-              }`}
-            />
-
+          <span className="b2 max-w-[150px] text-white leading-[1.25]">
+            Distributor Miller Welding
+            Machine &amp; Hypertherm
+            Plasma Cutting
           </span>
 
-        </button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+      {/* ================================================== */}
+      {/* HAMBURGER */}
+      {/* ================================================== */}
+
+      <button
+        type="button"
+        onClick={() => {
+          setIsMenuOpen(
+            (open) => !open
+          );
+        }}
+        className="absolute right-3 top-1/2 z-60 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-transparent"
+        aria-label={
+          isMenuOpen
+            ? "Close menu"
+            : "Open menu"
+        }
+        aria-expanded={isMenuOpen}
+      >
+
+        <span
+          className="relative block h-6 w-6"
+          aria-hidden
+        >
+
+          {/* TOP */}
+
+          <span
+            className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
+              isMenuOpen
+                ? "top-2.75 rotate-45"
+                : "top-1"
+            }`}
+          />
+
+
+          {/* MIDDLE */}
+
+          <span
+            className={`absolute left-0 top-2.75 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
+              isMenuOpen
+                ? "scale-x-0 opacity-0"
+                : "opacity-100"
+            }`}
+          />
+
+
+          {/* BOTTOM */}
+
+          <span
+            className={`absolute left-0 h-0.5 w-6 rounded-full bg-white transition-all duration-300 ${
+              isMenuOpen
+                ? "top-2.75 -rotate-45"
+                : "top-4.5"
+            }`}
+          />
+
+        </span>
+
+      </button>
 
       </div>
 
