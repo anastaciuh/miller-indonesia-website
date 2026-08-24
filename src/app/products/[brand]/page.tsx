@@ -11,6 +11,7 @@ import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
 import { HOBART_PREVIEWS } from "@/constants/hobart";
 import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
 import { INTERWELD_PRODUCTS } from "@/constants/interweld";
+import { INTERFLEX_PREVIEWS } from "@/constants/interflex";
 
 type Brand =
   | {
@@ -192,6 +193,30 @@ const BRANDS: Record<string, Brand> = {
   
       showContact: true,
     },
+
+      // =========================== InterFlex ===========================
+
+  interflex: {
+    name: "Interflex",
+    logo: "/image/logo/interflex.jpg",
+
+    // Desktop
+    logoWidth: 338,
+    logoHeight: 45,
+
+    // Mobile
+    mobileLogoWidth: 247,
+
+    description: [
+      "Interflex merupakan merek consumable pengelasan yang menyediakan elektroda, kawat las, dan berbagai produk pengelasan berkualitas tinggi untuk kebutuhan industri.",
+      "Dikenal dengan performa yang andal dan kualitas yang konsisten, produk Interflex didistribusikan di Indonesia oleh PT Duta Graha Miller (Miller Indonesia), sehingga memudahkan para profesional di seluruh Indonesia dalam memperoleh solusi pengelasan yang terpercaya.",
+    ],
+
+    type: "preview",
+    previews: INTERFLEX_PREVIEWS,
+
+    showContact: true,
+  },
 };
 
 export default async function BrandPage({
