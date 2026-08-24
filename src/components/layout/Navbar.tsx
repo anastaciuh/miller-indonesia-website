@@ -11,8 +11,8 @@ const PRODUCT_BRANDS = [
   { href: "/products/hypertherm", label: "Hypertherm" },
   { href: "/products/jasic", label: "Jasic" },
   { href: "/products/hobart", label: "Hobart" },
-  { href: "/products/interweld", label: "Interweld" },
   { href: "/products/bernard", label: "Bernard" },
+  { href: "/products/interweld", label: "Interweld" },
   { href: "/products/interflex", label: "Interflex" },
   { href: "/products/weldcraft", label: "Weldcraft" },
   { href: "/products/stanley-tools", label: "Stanley Tools" },
@@ -34,6 +34,22 @@ export default function Navbar() {
   const [pressedBrand, setPressedBrand] =
     useState<string | null>(null);
 
+// ==================================================
+// LOCK PAGE SCROLL WHEN MOBILE MENU IS OPEN
+// ==================================================
+
+useEffect(() => {
+  document.documentElement.style.overflow =
+    isMenuOpen ? "hidden" : "";
+
+  document.body.style.overflow =
+    isMenuOpen ? "hidden" : "";
+
+  return () => {
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  };
+}, [isMenuOpen]);
 
   // ==================================================
   // DESKTOP UNDERLINE
@@ -214,7 +230,7 @@ export default function Navbar() {
   // ==================================================
 
   return (
-    <nav className="w-full">
+    <nav className="sticky top-0 z-[9999] w-full">
 
       {/* ================================================== */}
       {/* DESKTOP NAVBAR */}
@@ -515,7 +531,11 @@ export default function Navbar() {
     <div className="relative z-60 md:hidden">
 
     <div 
-    className="w-full bg-[#168BC7]"
+    className={`w-full bg-[#168BC7] transition-opacity duration-300 ${
+      isMenuOpen
+        ? "opacity-0"
+        : "opacity-100"
+    }`}
     style={{
       paddingTop: "env(safe-area-inset-top)",
     }}
@@ -566,7 +586,11 @@ export default function Navbar() {
             (open) => !open
           );
         }}
-        className="absolute right-3 top-1/2 z-60 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-transparent"
+        className={`z-[10000] flex h-10 w-10 items-center justify-center bg-transparent ${
+          isMenuOpen
+            ? "fixed right-3 top-4"
+            : "absolute right-3 top-1/2 -translate-y-1/2"
+        }`}
         aria-label={
           isMenuOpen
             ? "Close menu"
@@ -624,7 +648,7 @@ export default function Navbar() {
       {/* ================================================== */}
 
       <div
-        className={`fixed inset-0 z-50 overflow-y-auto bg-[#0C182A] transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-50 overflow-hidden overscroll-none bg-[#0C182A] transition-opacity duration-300 md:hidden ${
           isMenuOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
