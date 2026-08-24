@@ -9,6 +9,9 @@ import { MILLER_CATEGORIES } from "@/constants/miller-categories";
 import { JASIC_CATEGORIES } from "@/constants/jasic-categories";
 import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
 import { HOBART_PREVIEWS } from "@/constants/hobart";
+import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
+import { INTERWELD_PRODUCTS } from "@/constants/interweld";
+import { INTERFLEX_PREVIEWS } from "@/constants/interflex";
 
 type Brand =
   | {
@@ -44,11 +47,11 @@ type Brand =
       previews: typeof HOBART_PREVIEWS;
       showContact?: boolean;
     };
-
+    
 const BRANDS: Record<string, Brand> = {
-  // ===========================
-  // Miller
-  // ===========================
+  
+  // =========================== Miller ===========================
+  
   miller: {
     name: "Miller",
     logo: "/image/logo/miller.jpg",
@@ -69,9 +72,9 @@ const BRANDS: Record<string, Brand> = {
     categories: MILLER_CATEGORIES,
   },
 
-  // ===========================
-  // Hypertherm
-  // ===========================
+
+  // =========================== Hypertherm ===========================
+
   hypertherm: {
     name: "Hypertherm",
     logo: "/image/logo/hypertherm.jpg",
@@ -94,9 +97,9 @@ const BRANDS: Record<string, Brand> = {
     showContact: true,
   },
 
-  // ===========================
-  // Jasic
-  // ===========================
+
+  //=========================== Jasic ===========================
+
   jasic: {
     name: "Jasic",
     logo: "/image/logo/jasic.jpg",
@@ -117,9 +120,9 @@ const BRANDS: Record<string, Brand> = {
     categories: JASIC_CATEGORIES,
   },
 
-  // ===========================
-  // Hobart
-  // ===========================
+
+  // =========================== Hobart ===========================
+
   hobart: {
     name: "Hobart",
     logo: "/image/logo/hobart.jpg",
@@ -138,6 +141,79 @@ const BRANDS: Record<string, Brand> = {
 
     type: "preview",
     previews: HOBART_PREVIEWS,
+
+    showContact: true,
+  },
+
+
+  // =========================== Bernard ===========================
+
+  bernard: {
+    name: "Bernard",
+    logo: "/image/logo/bernard.jpg",
+
+    // Desktop
+    logoWidth: 415,
+    logoHeight: 69,
+
+    // Mobile
+    mobileLogoWidth: 283,
+
+    description: [
+      "Bernard menghadirkan seluruh handle, neck, consumable, liner, dan kabel terbaiknya ke dalam rangkaian Bernard BTB MIG Guns. Nikmati performa dan daya tahan kelas industri, dilengkapi garansi resmi produsen selama 1 tahun untuk pistol las MIG semi-otomatis berpendingin udara ini.",
+      "",
+    ],
+
+    type: "category",
+    categories: BERNARD_CATEGORIES,
+
+    showContact: true,
+  },
+
+    // =========================== InterWeld ===========================
+
+    interweld: {
+      name: "Interweld",
+      logo: "/image/logo/interweld.jpg",
+  
+      // Desktop
+      logoWidth: 397,
+      logoHeight: 59,
+  
+      // Mobile
+      mobileLogoWidth: 243,
+  
+      description: [
+        "Rangkaian produk InterWeld meliputi oven elektroda, aksesori las, serta berbagai peralatan las yang mendukung industri fabrikasi, konstruksi, manufaktur, pemeliharaan, dan perbaikan.",
+        "Produk InterWeld tersedia melalui Miller Indonesia, memberikan solusi pengelasan yang andal serta dukungan lokal yang terpercaya bagi pelanggan.",
+      ],
+  
+      type: "product",
+      products: INTERWELD_PRODUCTS,
+  
+      showContact: true,
+    },
+
+      // =========================== InterFlex ===========================
+
+  interflex: {
+    name: "Interflex",
+    logo: "/image/logo/interflex.jpg",
+
+    // Desktop
+    logoWidth: 338,
+    logoHeight: 45,
+
+    // Mobile
+    mobileLogoWidth: 247,
+
+    description: [
+      "Interflex merupakan merek consumable pengelasan yang menyediakan elektroda, kawat las, dan berbagai produk pengelasan berkualitas tinggi untuk kebutuhan industri.",
+      "Dikenal dengan performa yang andal dan kualitas yang konsisten, produk Interflex didistribusikan di Indonesia oleh PT Duta Graha Miller (Miller Indonesia), sehingga memudahkan para profesional di seluruh Indonesia dalam memperoleh solusi pengelasan yang terpercaya.",
+    ],
+
+    type: "preview",
+    previews: INTERFLEX_PREVIEWS,
 
     showContact: true,
   },
