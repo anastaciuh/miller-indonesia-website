@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import { FileText } from "lucide-react";
+
 import type { Product } from "@/types/products";
 
 type ProductCardProps = Product;
@@ -37,8 +39,8 @@ export default function ProductCard({
           href={pdf}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-md bg-light-gray px-2 py-1 text-[14px] font-medium text-black transition hover:bg-gray-200"
-          >
+          className="mt-6 flex w-full items-center justify-center gap-2 rounded-md bg-light-gray px-3 py-2 text-[14px] font-medium text-black transition hover:bg-gray-200 md:inline-flex md:w-auto md:justify-start md:px-2 md:py-1"
+        >
           <FileText size={16} strokeWidth={2} />
           <span>Full Specification</span>
         </a>

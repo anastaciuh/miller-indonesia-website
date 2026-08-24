@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import Image from "next/image";
 
 import CategoryCard from "@/components/layout/CategoryCard";
@@ -9,6 +10,7 @@ type Category = {
   image: string;
   title: string;
   description: string;
+  href?: string;
 };
 
 type CategoryListProps = {
@@ -22,51 +24,34 @@ export default function CategoryList({
 
   const [isDragging, setIsDragging] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   const startX = useRef(0);
   const scrollStart = useRef(0);
 
-  // ===========================
+  // =========================
   // CHECK SCROLL POSITION
-  // ===========================
+  // =========================
 
   const updateScrollButtons = () => {
-    const container = containerRef.current;
+    if (!containerRef.current) return;
 
-    if (!container) return;
+    const {
+      scrollLeft,
+      scrollWidth,
+      clientWidth,
+    } = containerRef.current;
 
-    setCanScrollLeft(container.scrollLeft > 1);
+    setCanScrollLeft(scrollLeft > 5);
 
     setCanScrollRight(
-      container.scrollLeft + container.clientWidth <
-        container.scrollWidth - 1
+      scrollLeft + clientWidth < scrollWidth - 5
     );
   };
 
-  // ===========================
-  // INITIAL + RESIZE
-  // ===========================
-
-  useEffect(() => {
-    updateScrollButtons();
-
-    const container = containerRef.current;
-
-    if (!container) return;
-
-    container.addEventListener("scroll", updateScrollButtons);
-    window.addEventListener("resize", updateScrollButtons);
-
-    return () => {
-      container.removeEventListener("scroll", updateScrollButtons);
-      window.removeEventListener("resize", updateScrollButtons);
-    };
-  }, [categories]);
-
-  // ===========================
-  // DRAG
-  // ===========================
+  // =========================
+  // MOUSE DRAG
+  // =========================
 
   const handleMouseDown = (
     e: React.MouseEvent<HTMLDivElement>
@@ -76,7 +61,8 @@ export default function CategoryList({
     setIsDragging(true);
 
     startX.current = e.pageX;
-    scrollStart.current = containerRef.current.scrollLeft;
+    scrollStart.current =
+      containerRef.current.scrollLeft;
   };
 
   const handleMouseMove = (
@@ -98,34 +84,26 @@ export default function CategoryList({
     setIsDragging(false);
   };
 
-  // ===========================
+  // =========================
   // BUTTON SCROLL
-  // ===========================
+  // =========================
 
   const handleScroll = (
     direction: "left" | "right"
   ) => {
-    const container = containerRef.current;
+    if (!containerRef.current) return;
 
-    if (!container) return;
-
-    const firstCard = container.querySelector(
-      "[data-category-card]"
-    ) as HTMLElement | null;
+    const firstCard =
+      containerRef.current.querySelector("article");
 
     if (!firstCard) return;
 
-    const cardWidth = firstCard.offsetWidth;
-
-    const styles = window.getComputedStyle(
-      firstCard.parentElement!
-    );
-
-    const gap = parseFloat(styles.columnGap || "0");
+    const cardWidth = firstCard.clientWidth;
+    const gap = 32;
 
     const scrollAmount = cardWidth + gap;
 
-    container.scrollBy({
+    containerRef.current.scrollBy({
       left:
         direction === "right"
           ? scrollAmount
@@ -134,13 +112,39 @@ export default function CategoryList({
     });
   };
 
-  // ===========================
-  // NO CATEGORIES
-  // ===========================
+  // =========================
+  // LISTEN TO SCROLL
+  // =========================
 
-  if (categories.length === 0) {
-    return null;
-  }
+  useEffect(() => {
+    const container = containerRef.current;
+
+    if (!container) return;
+
+    updateScrollButtons();
+
+    container.addEventListener(
+      "scroll",
+      updateScrollButtons
+    );
+
+    window.addEventListener(
+      "resize",
+      updateScrollButtons
+    );
+
+    return () => {
+      container.removeEventListener(
+        "scroll",
+        updateScrollButtons
+      );
+
+      window.removeEventListener(
+        "resize",
+        updateScrollButtons
+      );
+    };
+  }, [categories]);
 
   return (
     <div>
@@ -150,48 +154,45 @@ export default function CategoryList({
           Product Category
         </div>
 
-        {/* BUTTONS */}
-        {(canScrollLeft || canScrollRight) && (
-          <div className="flex gap-4">
-            {/* LEFT */}
-            <button
-              type="button"
-              onClick={() => handleScroll("left")}
-              disabled={!canScrollLeft}
-              className={`relative h-[40px] w-[40px] transition-opacity ${
-                !canScrollLeft
-                  ? "pointer-events-none opacity-30"
-                  : "opacity-100"
-              }`}
-            >
-              <Image
-                src="/component/button-left.jpg"
-                alt="Previous"
-                fill
-                className="object-contain"
-              />
-            </button>
+        <div className="flex gap-4">
+          {/* LEFT */}
+          <button
+            type="button"
+            onClick={() => handleScroll("left")}
+            disabled={!canScrollLeft}
+            className={`relative h-[40px] w-[40px] transition-opacity ${
+              canScrollLeft
+                ? "cursor-pointer opacity-100"
+                : "cursor-default opacity-30"
+            }`}
+          >
+            <Image
+              src="/component/button-left.jpg"
+              alt="Previous"
+              fill
+              className="object-contain"
+            />
+          </button>
 
-            {/* RIGHT */}
-            <button
-              type="button"
-              onClick={() => handleScroll("right")}
-              disabled={!canScrollRight}
-              className={`relative h-[40px] w-[40px] transition-opacity ${
-                !canScrollRight
-                  ? "pointer-events-none opacity-30"
-                  : "opacity-100"
-              }`}
-            >
-              <Image
-                src="/component/button-right.jpg"
-                alt="Next"
-                fill
-                className="object-contain"
-              />
-            </button>
-          </div>
-        )}
+          {/* RIGHT */}
+          <button
+            type="button"
+            onClick={() => handleScroll("right")}
+            disabled={!canScrollRight}
+            className={`relative h-[40px] w-[40px] transition-opacity ${
+              canScrollRight
+                ? "cursor-pointer opacity-100"
+                : "cursor-default opacity-30"
+            }`}
+          >
+            <Image
+              src="/component/button-right.jpg"
+              alt="Next"
+              fill
+              className="object-contain"
+            />
+          </button>
+        </div>
       </div>
 
       {/* CATEGORY CAROUSEL */}
@@ -202,7 +203,9 @@ export default function CategoryList({
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
         className={`w-screen overflow-x-auto overflow-y-hidden ${
-          isDragging ? "cursor-grabbing" : "cursor-grab"
+          isDragging
+            ? "cursor-grabbing"
+            : "cursor-grab"
         }`}
         style={{
           scrollbarWidth: "none",
@@ -215,13 +218,10 @@ export default function CategoryList({
           <div className="w-[2px] shrink-0" />
 
           {categories.map((category) => (
-            <div
+            <CategoryCard
               key={category.title}
-              data-category-card
-              className="shrink-0"
-            >
-              <CategoryCard {...category} />
-            </div>
+              {...category}
+            />
           ))}
 
           {/* Extra space kanan */}
