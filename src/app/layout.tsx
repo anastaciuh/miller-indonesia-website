@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Miller Indonesia",
 
   icons: {
-    icon: "/images/home/icon-miller.png",
+    icon: "/images/home/icon-black.png",
   },
 
   description:
