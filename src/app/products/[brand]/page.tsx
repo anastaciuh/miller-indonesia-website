@@ -9,6 +9,7 @@ import { MILLER_CATEGORIES } from "@/constants/miller-categories";
 import { JASIC_CATEGORIES } from "@/constants/jasic-categories";
 import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
 import { HOBART_PREVIEWS } from "@/constants/hobart";
+import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
 
 type Brand =
   | {
@@ -44,7 +45,7 @@ type Brand =
       previews: typeof HOBART_PREVIEWS;
       showContact?: boolean;
     };
-
+    
 const BRANDS: Record<string, Brand> = {
   // ===========================
   // Miller
@@ -138,6 +139,31 @@ const BRANDS: Record<string, Brand> = {
 
     type: "preview",
     previews: HOBART_PREVIEWS,
+
+    showContact: true,
+  },
+
+    // ===========================
+  // Bernard
+  // ===========================
+  bernard: {
+    name: "Bernard",
+    logo: "/image/logo/bernard.jpg",
+
+    // Desktop
+    logoWidth: 415,
+    logoHeight: 69,
+
+    // Mobile
+    mobileLogoWidth: 283,
+
+    description: [
+      "Bernard menghadirkan seluruh handle, neck, consumable, liner, dan kabel terbaiknya ke dalam rangkaian Bernard BTB MIG Guns. Nikmati performa dan daya tahan kelas industri, dilengkapi garansi resmi produsen selama 1 tahun untuk pistol las MIG semi-otomatis berpendingin udara ini.",
+      "",
+    ],
+
+    type: "category",
+    categories: BERNARD_CATEGORIES,
 
     showContact: true,
   },
