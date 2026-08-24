@@ -15,6 +15,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Miller Indonesia",
 
+  icons: {
+    icon: "/images/home/icon-miller.png",
+  },
+
   description:
     "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
 
@@ -60,7 +64,7 @@ export default function RootLayout({
          <main className="flex-1">
 
            {children}
-           
+
          </main>
 
         <Footer />

@@ -11,8 +11,8 @@ const PRODUCT_BRANDS = [
   { href: "/products/hypertherm", label: "Hypertherm" },
   { href: "/products/jasic", label: "Jasic" },
   { href: "/products/hobart", label: "Hobart" },
-  { href: "/products/bernard", label: "Bernard" },
   { href: "/products/interweld", label: "Interweld" },
+  { href: "/products/bernard", label: "Bernard" },
   { href: "/products/interflex", label: "Interflex" },
   { href: "/products/weldcraft", label: "Weldcraft" },
   { href: "/products/stanley-tools", label: "Stanley Tools" },
@@ -283,6 +283,10 @@ export default function Navbar() {
               <House
                 size={20}
                 strokeWidth={3}
+                fill={isDesktopLinkActive("/") 
+                  ? "white" 
+                  : "none"
+                }
                 className="text-white"
               />
 
@@ -713,56 +717,75 @@ export default function Navbar() {
                       : "-translate-y-3 opacity-0"
                   }`}
                 >
+            {/* COLUMN 1 */}
 
-                  {PRODUCT_BRANDS.map(
-                    (brand) => (
-                      <Link
-                        key={brand.href}
-                        href={brand.href}
-                        className={brandClass(
-                          brand.href
-                        )}
-                        onClick={() => {
-                          // Reset everything
-                          // before navigating
-                          setPressedBrand(
-                            null
-                          );
+            <div className="flex flex-col gap-7">
 
-                          setIsProductsOpen(
-                            false
-                          );
+            {PRODUCT_BRANDS
+              .slice(0, 5)
+              .map((brand) => (
+                <Link
+                  key={brand.href}
+                  href={brand.href}
+                  className={brandClass(brand.href)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  onPointerDown={() =>
+                    setPressedBrand(brand.href)
+                  }
+                  onPointerUp={() =>
+                    setPressedBrand(null)
+                  }
+                  onPointerCancel={() =>
+                    setPressedBrand(null)
+                  }
+                  onPointerLeave={() =>
+                    setPressedBrand(null)
+                  }
+                >
+                  {brand.label}
+                </Link>
+              ))}
 
-                          setIsMenuOpen(
-                            false
-                          );
-                        }}
-                        onPointerDown={() =>
-                          setPressedBrand(
-                            brand.href
-                          )
-                        }
-                        onPointerUp={() =>
-                          setPressedBrand(
-                            null
-                          )
-                        }
-                        onPointerCancel={() =>
-                          setPressedBrand(
-                            null
-                          )
-                        }
-                        onPointerLeave={() =>
-                          setPressedBrand(
-                            null
-                          )
-                        }
-                      >
-                        {brand.label}
-                      </Link>
-                    )
-                  )}
+            </div>
 
+
+            {/* COLUMN 2 */}
+
+            <div className="flex flex-col gap-7">
+
+            {PRODUCT_BRANDS
+              .slice(5, 10)
+              .map((brand) => (
+                <Link
+                  key={brand.href}
+                  href={brand.href}
+                  className={brandClass(brand.href)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsProductsOpen(false);
+                  }}
+                  onPointerDown={() =>
+                    setPressedBrand(brand.href)
+                  }
+                  onPointerUp={() =>
+                    setPressedBrand(null)
+                  }
+                  onPointerCancel={() =>
+                    setPressedBrand(null)
+                  }
+                  onPointerLeave={() =>
+                    setPressedBrand(null)
+                  }
+                >
+                  {brand.label}
+                </Link>
+              ))}
+
+            </div>
+                  
                 </div>
 
               </div>
