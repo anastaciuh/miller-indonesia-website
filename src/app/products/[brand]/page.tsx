@@ -13,6 +13,8 @@ import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
 import { INTERWELD_PRODUCTS } from "@/constants/interweld";
 import { INTERFLEX_PREVIEWS } from "@/constants/interflex";
 import { WELDCRAFT_PRODUCTS } from "@/constants/weldcraft-miller";
+import { STANLEY_PREVIEWS } from "@/constants/stanley";
+import { GOSAVE_PREVIEWS } from "@/constants/gosave";
 
 type Brand =
   | {
@@ -242,6 +244,54 @@ const BRANDS: Record<string, Brand> = {
     
         showContact: true,
       },
+
+   // =========================== StanleyTools ===========================
+
+  "stanley-tools": {
+    name: "Stanley Tools",
+    logo: "/image/logo/stanley.jpg",
+
+    // Desktop
+    logoWidth: 324,
+    logoHeight: 97,
+
+    // Mobile
+    mobileLogoWidth: 217,
+
+    description: [
+      "STANLEY Powertools & Handtools telah menghadirkan peralatan terpercaya dan solusi inovatif bagi para profesional serta pengguna DIY selama lebih dari 175 tahun.",
+      "Dikenal karena kualitas, daya tahan, dan performanya, produk STANLEY dirancang untuk mendukung berbagai kebutuhan mulai dari konstruksi, pertukangan kayu, manufaktur, pemeliharaan, hingga industri otomotif. STANLEY hand tools dan power tools tersedia melalui Miller Indonesia.",
+    ],
+
+    type: "preview",
+    previews: STANLEY_PREVIEWS,
+
+    showContact: true,
+  },
+
+     // =========================== GoSave ===========================
+
+     gosave: {
+      name: "GoSave",
+      logo: "/image/logo/gosave.jpg",
+  
+      // Desktop
+      logoWidth: 378,
+      logoHeight: 101,
+  
+      // Mobile
+      mobileLogoWidth: 266,
+  
+      description: [
+        "GoSave menyediakan peralatan keselamatan dan perlindungan diri yang andal untuk melindungi pekerja di berbagai lingkungan industri. Dikenal dengan komitmennya terhadap kualitas, keselamatan, dan daya tahan.",
+        "GoSave menawarkan berbagai produk seperti helm keselamatan, kacamata pelindung, sarung tangan, perlindungan pernapasan, perlindungan pendengaran, sepatu keselamatan, serta perlengkapan PPE penting lainnya untuk mendukung keselamatan kerja.",
+      ],
+  
+      type: "preview",
+      previews: GOSAVE_PREVIEWS,
+  
+      showContact: true,
+    },
 };
 
 export default async function BrandPage({
