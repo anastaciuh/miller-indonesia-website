@@ -3,14 +3,52 @@ import Image from "next/image";
 import CategoryList from "@/components/layout/CategoryList";
 import ProductList from "@/components/layout/ProductList";
 import ContactButton from "@/components/layout/ContactButton";
+import PreviewList from "@/components/layout/PreviewList";
 
 import { MILLER_CATEGORIES } from "@/constants/miller-categories";
 import { JASIC_CATEGORIES } from "@/constants/jasic-categories";
 import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
+import { HOBART_PREVIEWS } from "@/constants/hobart";
 
-const BRANDS = {
+type Brand =
+  | {
+      name: string;
+      logo: string;
+      logoWidth: number;
+      logoHeight: number;
+      mobileLogoWidth: number;
+      description: string[];
+      type: "category";
+      categories: typeof MILLER_CATEGORIES;
+      showContact?: boolean;
+    }
+  | {
+      name: string;
+      logo: string;
+      logoWidth: number;
+      logoHeight: number;
+      mobileLogoWidth: number;
+      description: string[];
+      type: "product";
+      products: typeof HYPERTHERM_PRODUCTS;
+      showContact?: boolean;
+    }
+  | {
+      name: string;
+      logo: string;
+      logoWidth: number;
+      logoHeight: number;
+      mobileLogoWidth: number;
+      description: string[];
+      type: "preview";
+      previews: typeof HOBART_PREVIEWS;
+      showContact?: boolean;
+    };
 
-  // =========================== Miller ===========================
+const BRANDS: Record<string, Brand> = {
+  // ===========================
+  // Miller
+  // ===========================
   miller: {
     name: "Miller",
     logo: "/image/logo/miller.jpg",
@@ -27,11 +65,13 @@ const BRANDS = {
       "Kami mengutamakan kemitraan dan kualitas kerja. Produk kami dirancang bersama para pengguna untuk berbagai aplikasi di bidang manufaktur, fabrikasi, konstruksi, penerbangan, olahraga otomotif, pendidikan, pertanian, dan kelautan.",
     ],
 
-    type: "category" as const,
+    type: "category",
     categories: MILLER_CATEGORIES,
   },
 
-  //=========================== Hypertherm ===========================
+  // ===========================
+  // Hypertherm
+  // ===========================
   hypertherm: {
     name: "Hypertherm",
     logo: "/image/logo/hypertherm.jpg",
@@ -48,11 +88,15 @@ const BRANDS = {
       "Sistem plasma Hypertherm dipercaya dan digunakan oleh lebih banyak bisnis dan pengguna dibandingkan merek lainnya. Jelajahi berbagai sistem pemotongan, gouging, dan penandaan plasma dari seri Powermax® Air Plasma kami.",
     ],
 
-    type: "product" as const,
+    type: "product",
     products: HYPERTHERM_PRODUCTS,
+
+    showContact: true,
   },
 
-//=========================== Jasic ===========================
+  // ===========================
+  // Jasic
+  // ===========================
   jasic: {
     name: "Jasic",
     logo: "/image/logo/jasic.jpg",
@@ -69,8 +113,33 @@ const BRANDS = {
       "Mulai dari pengelasan dan pemotongan plasma hingga solusi laser, JASIC mendukung berbagai industri, termasuk manufaktur, fabrikasi, konstruksi, otomotif, perkapalan, energi, dan pengolahan logam.",
     ],
 
-    type: "category" as const,
+    type: "category",
     categories: JASIC_CATEGORIES,
+  },
+
+  // ===========================
+  // Hobart
+  // ===========================
+  hobart: {
+    name: "Hobart",
+    logo: "/image/logo/hobart.jpg",
+
+    // Desktop
+    logoWidth: 332,
+    logoHeight: 113,
+
+    // Mobile
+    mobileLogoWidth: 214,
+
+    description: [
+      "Hobart Brothers memproduksi logam pengisi (filler metal), termasuk kawat tubular (flux-cored dan metal-cored), kawat solid, serta elektroda las berlapis dengan merek Hobart®.",
+      "Hobart Brothers terus mengembangkan dan memproduksi kawat tubular Hobart® (metal-cored dan flux-cored), kawat solid, serta elektroda las berlapis untuk didistribusikan ke berbagai negara di seluruh dunia.",
+    ],
+
+    type: "preview",
+    previews: HOBART_PREVIEWS,
+
+    showContact: true,
   },
 };
 
@@ -81,7 +150,7 @@ export default async function BrandPage({
 }) {
   const { brand } = await params;
 
-  const brandData = BRANDS[brand as keyof typeof BRANDS];
+  const brandData = BRANDS[brand];
 
   if (!brandData) {
     return <div>Brand tidak ditemukan</div>;
@@ -109,7 +178,7 @@ export default async function BrandPage({
           />
 
           {/* Desktop Contact Button */}
-          {brandData.type === "product" && (
+          {brandData.showContact && (
             <div className="hidden md:block">
               <ContactButton />
             </div>
@@ -128,23 +197,28 @@ export default async function BrandPage({
         </div>
       </section>
 
-      {/* Product / Category */}
+      {/* Product / Category / Preview */}
       <section className="mt-16">
-        {/* Category Brand */}
+        {/* Category */}
         {brandData.type === "category" && (
           <CategoryList categories={brandData.categories} />
         )}
 
-        {/* Product Brand */}
+        {/* Product */}
         {brandData.type === "product" && (
-          <>
-            <ProductList products={brandData.products} />
+          <ProductList products={brandData.products} />
+        )}
 
-            {/* Mobile Contact Button */}
-            <div className="mt-16 px-10 md:hidden">
-              <ContactButton className="w-full justify-center" />
-            </div>
-          </>
+        {/* Preview */}
+        {brandData.type === "preview" && (
+          <PreviewList previews={brandData.previews} />
+        )}
+
+        {/* Mobile Contact Button */}
+        {brandData.showContact && (
+          <div className="mt-16 px-10 md:hidden">
+            <ContactButton className="w-full justify-center" />
+          </div>
         )}
       </section>
     </main>
