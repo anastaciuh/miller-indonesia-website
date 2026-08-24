@@ -1,0 +1,40 @@
+*   [33mce80f81[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #11 from anastaciuh/feature/interflex
+[31m|[m[32m\[m  
+[31m|[m * [33m14d3a12[m[33m ([m[1;31morigin/feature/interflex[m[33m, [m[1;32mfeature/interflex[m[33m)[m feat: interflex
+[31m|[m[31m/[m  
+*   [33m03b77c7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Merge pull request #10 from anastaciuh/feature/interweld
+[33m|[m[34m\[m  
+[33m|[m * [33m0b86a4d[m[33m ([m[1;31morigin/feature/interweld[m[33m, [m[1;32mfeature/interweld[m[33m)[m feat: interweld
+[33m|[m[33m/[m  
+*   [33m676993d[m Merge pull request #9 from anastaciuh/feature/bernard
+[35m|[m[36m\[m  
+[35m|[m * [33mc5774c9[m[33m ([m[1;31morigin/feature/bernard[m[33m, [m[1;32mfeature/bernard[m[33m)[m feat: bernard
+[35m|[m[35m/[m  
+*   [33mc49c28a[m Merge pull request #8 from anastaciuh/feature/revisi-ucil
+[1;31m|[m[1;32m\[m  
+[1;31m|[m * [33m5d5d5bd[m fix: navbar icon menu, favicon, restore pdf
+[1;31m|[m * [33m002525c[m fix: restore pdf
+[1;31m|[m * [33m75a60a0[m fix: navbar icon home, navbar urutan menu, favicon
+[1;31m|[m *   [33mc9ca260[m Merge remote-tracking branch 'origin/main' into feature/revisi-ucil
+[1;31m|[m [1;33m|[m[1;31m\[m  
+[1;31m|[m [1;33m|[m[1;31m/[m  
+[1;31m|[m[1;31m/[m[1;33m|[m   
+* [1;33m|[m   [33m2dfe629[m Merge pull request #6 from anastaciuh/feature/hobart
+[1;35m|[m[1;36m\[m [1;33m\[m  
+[1;35m|[m * [1;33m|[m [33m2e60890[m[33m ([m[1;31morigin/feature/hobart[m[33m, [m[1;32mfeature/hobart[m[33m)[m feat: hobart  page
+[1;35m|[m[1;35m/[m [1;33m/[m  
+[1;35m|[m * [33mbf8d8bd[m fix: navbar icon, navbar urutan menu, favicon
+[1;35m|[m *   [33m784097f[m Merge remote-tracking branch 'origin/main' into feature/revisi-ucil
+[1;35m|[m [31m|[m[1;35m\[m  
+[1;35m|[m [31m|[m[1;35m/[m  
+[1;35m|[m[1;35m/[m[31m|[m   
+* [31m|[m   [33mff2a4b0[m Merge pull request #5 from anastaciuh/feature/jasic
+[33m|[m[34m\[m [31m\[m  
+[33m|[m * [31m|[m [33m7aaca70[m[33m ([m[1;31morigin/feature/jasic[m[33m, [m[1;32mfeature/jasic[m[33m)[m feat: jasic page
+[33m|[m[33m/[m [31m/[m  
+* [31m|[m   [33mbe6a64c[m Merge pull request #4 from anastaciuh/feature/revisi
+[35m|[m[36m\[m [31m\[m  
+[35m|[m * [31m|[m [33mb2b5896[m[33m ([m[1;31morigin/feature/revisi[m[33m, [m[1;32mfeature/revisi[m[33m)[m feat: revisi seputar product
+[35m|[m[35m/[m [31m/[m  
+[35m|[m * [33m7f81dcf[m fix: fix navbar dan footer
+[35m|[m[35m/[m  
