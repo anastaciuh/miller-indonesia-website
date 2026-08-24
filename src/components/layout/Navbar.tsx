@@ -586,7 +586,11 @@ useEffect(() => {
             (open) => !open
           );
         }}
-        className="absolute right-3 top-1/2 z-60 flex h-10 w-10 -translate-y-1/2 items-center justify-center bg-transparent"
+        className={`z-[10000] flex h-10 w-10 items-center justify-center bg-transparent ${
+          isMenuOpen
+            ? "fixed right-3 top-4"
+            : "absolute right-3 top-1/2 -translate-y-1/2"
+        }`}
         aria-label={
           isMenuOpen
             ? "Close menu"
