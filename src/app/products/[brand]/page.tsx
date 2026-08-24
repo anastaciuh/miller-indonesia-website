@@ -12,6 +12,7 @@ import { HOBART_PREVIEWS } from "@/constants/hobart";
 import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
 import { INTERWELD_PRODUCTS } from "@/constants/interweld";
 import { INTERFLEX_PREVIEWS } from "@/constants/interflex";
+import { WELDCRAFT_PRODUCTS } from "@/constants/weldcraft-miller";
 
 type Brand =
   | {
@@ -217,6 +218,30 @@ const BRANDS: Record<string, Brand> = {
 
     showContact: true,
   },
+
+      // =========================== Weldcraft ===========================
+
+      weldcraft: {
+        name: "Weldcraft",
+        logo: "/image/logo/weldcraft.jpg",
+    
+        // Desktop
+        logoWidth: 484,
+        logoHeight: 96,
+    
+        // Mobile
+        mobileLogoWidth: 298,
+    
+        description: [
+          "Torch TIG Weldcraft Miller dirancang dan diuji secara khusus untuk bekerja optimal dengan mesin las TIG Miller. Diproduksi di Amerika Serikat, torch dan consumable Weldcraft dibuat menggunakan paduan tembaga berkualitas tinggi yang mampu menghadapi suhu ekstrem.",
+          "Tersedia berbagai pilihan torch TIG Weldcraft Miller untuk menangani berbagai kebutuhan pengelasan TIG, mulai dari pekerjaan yang paling detail hingga tantangan pengelasan yang paling berat.",
+        ],
+    
+        type: "product",
+        products: WELDCRAFT_PRODUCTS,
+    
+        showContact: true,
+      },
 };
 
 export default async function BrandPage({
