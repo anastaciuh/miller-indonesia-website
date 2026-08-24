@@ -14,6 +14,7 @@ import { INTERWELD_PRODUCTS } from "@/constants/interweld";
 import { INTERFLEX_PREVIEWS } from "@/constants/interflex";
 import { WELDCRAFT_PRODUCTS } from "@/constants/weldcraft-miller";
 import { STANLEY_PREVIEWS } from "@/constants/stanley";
+import { GOSAVE_PREVIEWS } from "@/constants/gosave";
 
 type Brand =
   | {
@@ -267,6 +268,30 @@ const BRANDS: Record<string, Brand> = {
 
     showContact: true,
   },
+
+     // =========================== GoSave ===========================
+
+     gosave: {
+      name: "GoSave",
+      logo: "/image/logo/gosave.jpg",
+  
+      // Desktop
+      logoWidth: 378,
+      logoHeight: 101,
+  
+      // Mobile
+      mobileLogoWidth: 266,
+  
+      description: [
+        "GoSave menyediakan peralatan keselamatan dan perlindungan diri yang andal untuk melindungi pekerja di berbagai lingkungan industri. Dikenal dengan komitmennya terhadap kualitas, keselamatan, dan daya tahan.",
+        "GoSave menawarkan berbagai produk seperti helm keselamatan, kacamata pelindung, sarung tangan, perlindungan pernapasan, perlindungan pendengaran, sepatu keselamatan, serta perlengkapan PPE penting lainnya untuk mendukung keselamatan kerja.",
+      ],
+  
+      type: "preview",
+      previews: GOSAVE_PREVIEWS,
+  
+      showContact: true,
+    },
 };
 
 export default async function BrandPage({
