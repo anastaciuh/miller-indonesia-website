@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -12,7 +14,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Miller Indonesia",
-  description: "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
+
+  icons: {
+    icon: "/images/home/icon-black.png",
+  },
+
+  description:
+    "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
 
   keywords: [
     "Miller",
@@ -34,6 +42,11 @@ export const metadata: Metadata = {
   ],
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export default function RootLayout({
   children,
@@ -45,11 +58,17 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-screen flex-col">
         <Navbar />
-        {children}
+
+         <main className="flex-1">
+
+           {children}
+
+         </main>
+
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }

@@ -391,7 +391,7 @@ export default function Footer() {
               </p>
 
               <p>
-                +62 81314223938 (Dony Miller)
+                +6281314223938 (Dony Miller)
               </p>
 
             </div>
@@ -636,13 +636,26 @@ export default function Footer() {
 
         <div className="w-full bg-[#138CCC]">
 
-          <Image
-            src="/images/home/footer-mobile.png"
-            alt="Miller Indonesia"
-            width={390}
-            height={80}
-            className="h-auto w-full"
-          />
+         <div className="container-custom flex h-[107px] items-center px-8">
+           <div className="flex items-center gap-3 text-[10px]">
+              <Image
+                src="/images/home/logo-mobile.png"
+                alt="Miller Indonesia"
+                width={390}
+                height={80}
+                className="h-auto w-[150px]"
+              />
+
+                <span className="h-10 w-1 bg-white/80" />
+
+                <span className="b2">
+                Distributor Miller Welding Machine &amp;
+                Hypertherm Plasma Cutting
+              </span>
+              
+           </div>
+
+         </div>
 
         </div>
 
