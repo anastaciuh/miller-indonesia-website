@@ -4,19 +4,23 @@ import type { Product } from "@/types/products";
 
 type ProductListProps = {
   products: Product[];
+  showTitle?: boolean;
 };
 
 export default function ProductList({
   products,
+  showTitle = true,
 }: ProductListProps) {
   return (
     <section className="px-10">
-      {/* Product Category Header */}
-      <div className="mb-8 flex items-center justify-between">
-        <div className="h1 font-black text-black">
-          Product 
+      {/* Product Header */}
+      {showTitle && (
+        <div className="mb-8 flex items-center justify-between">
+          <div className="h1 font-black text-black">
+            Product
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Product Grid */}
       <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-4 lg:gap-x-8">

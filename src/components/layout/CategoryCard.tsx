@@ -1,4 +1,9 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { useRef } from "react";
+
 import type { Category } from "@/types/category";
 
 type CategoryCardProps = Category;
@@ -7,9 +12,35 @@ export default function CategoryCard({
   image,
   title,
   description,
+  href,
 }: CategoryCardProps) {
-  return (
-    <article className="w-[420px] shrink-0">
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = false;
+    startX.current = e.clientX;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (Math.abs(e.clientX - startX.current) > 5) {
+      isDragging.current = true;
+    }
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (isDragging.current) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
+
+  const card = (
+    <article
+      className="w-[420px] shrink-0 select-none"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+    >
       <Image
         src={image}
         alt={title}
@@ -30,4 +61,18 @@ export default function CategoryCard({
       </div>
     </article>
   );
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        onClick={handleClick}
+        draggable={false}
+      >
+        {card}
+      </Link>
+    );
+  }
+
+  return card;
 }

@@ -1,18 +1,89 @@
-type ProductPageProps = {
-  params: Promise<{ brand: string; product: string }>;
-};
+import Image from "next/image";
+import Link from "next/link";
 
-export default async function ProductPage({ params }: ProductPageProps) {
+import ProductList from "@/components/layout/ProductList";
+import ContactButton from "@/components/layout/ContactButton";
+
+import { BRAND_PRODUCTS } from "@/constants/brand-products";
+
+export default async function ProductPage({
+  params,
+}: {
+  params: Promise<{
+    brand: string;
+    product: string;
+  }>;
+}) {
   const { brand, product } = await params;
 
+  const brandData =
+    BRAND_PRODUCTS[brand as keyof typeof BRAND_PRODUCTS];
+
+  if (!brandData) {
+    return <div>Brand tidak ditemukan</div>;
+  }
+
+  const productData =
+    brandData[product as keyof typeof brandData];
+
+  if (!productData) {
+    return <div>Product tidak ditemukan</div>;
+  }
+
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <p className="text-sm uppercase tracking-wide text-zinc-500 capitalize">
-        {brand.replace(/-/g, " ")}
-      </p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight capitalize">
-        {product.replace(/-/g, " ")}
-      </h1>
+    <main>
+      {/* ========================= */}
+      {/* PRODUCT HEADER */}
+      {/* ========================= */}
+
+      <section className="px-10 pt-10">
+        <div className="flex items-center justify-between">
+          {/* BACK + PRODUCT CATEGORY */}
+
+          <div className="flex items-center">
+            <Link
+              href={`/products/${brand}`}
+              className="relative h-[40px] w-[40px] shrink-0"
+            >
+              <Image
+                src="/component/button-left.jpg"
+                alt="Back"
+                fill
+                className="object-contain"
+              />
+            </Link>
+
+            <h1 className="h1 ml-6 font-black text-black">
+              {productData.title}
+            </h1>
+          </div>
+
+          {/* DESKTOP CONTACT BUTTON */}
+
+          <div className="hidden md:block">
+            <ContactButton />
+          </div>
+        </div>
+      </section>
+
+      {/* ========================= */}
+      {/* PRODUCT LIST */}
+      {/* ========================= */}
+
+      <section className="mt-16">
+        <ProductList
+          products={productData.products}
+          showTitle={false}
+        />
+      </section>
+
+      {/* ========================= */}
+      {/* MOBILE CONTACT BUTTON */}
+      {/* ========================= */}
+
+      <div className="mt-16 px-10 md:hidden">
+        <ContactButton className="w-full justify-center" />
+      </div>
     </main>
   );
 }
