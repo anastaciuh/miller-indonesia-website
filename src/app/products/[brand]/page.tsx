@@ -10,6 +10,7 @@ import { JASIC_CATEGORIES } from "@/constants/jasic-categories";
 import { HYPERTHERM_PRODUCTS } from "@/constants/hyperterm";
 import { HOBART_PREVIEWS } from "@/constants/hobart";
 import { BERNARD_CATEGORIES } from "@/constants/bernard-categories";
+import { INTERWELD_PRODUCTS } from "@/constants/interweld";
 
 type Brand =
   | {
@@ -47,9 +48,9 @@ type Brand =
     };
     
 const BRANDS: Record<string, Brand> = {
-  // ===========================
-  // Miller
-  // ===========================
+  
+  // =========================== Miller ===========================
+  
   miller: {
     name: "Miller",
     logo: "/image/logo/miller.jpg",
@@ -70,9 +71,9 @@ const BRANDS: Record<string, Brand> = {
     categories: MILLER_CATEGORIES,
   },
 
-  // ===========================
-  // Hypertherm
-  // ===========================
+
+  // =========================== Hypertherm ===========================
+
   hypertherm: {
     name: "Hypertherm",
     logo: "/image/logo/hypertherm.jpg",
@@ -95,9 +96,9 @@ const BRANDS: Record<string, Brand> = {
     showContact: true,
   },
 
-  // ===========================
-  // Jasic
-  // ===========================
+
+  //=========================== Jasic ===========================
+
   jasic: {
     name: "Jasic",
     logo: "/image/logo/jasic.jpg",
@@ -118,9 +119,9 @@ const BRANDS: Record<string, Brand> = {
     categories: JASIC_CATEGORIES,
   },
 
-  // ===========================
-  // Hobart
-  // ===========================
+
+  // =========================== Hobart ===========================
+
   hobart: {
     name: "Hobart",
     logo: "/image/logo/hobart.jpg",
@@ -143,9 +144,9 @@ const BRANDS: Record<string, Brand> = {
     showContact: true,
   },
 
-    // ===========================
-  // Bernard
-  // ===========================
+
+  // =========================== Bernard ===========================
+
   bernard: {
     name: "Bernard",
     logo: "/image/logo/bernard.jpg",
@@ -167,6 +168,30 @@ const BRANDS: Record<string, Brand> = {
 
     showContact: true,
   },
+
+    // =========================== InterWeld ===========================
+
+    interweld: {
+      name: "Interweld",
+      logo: "/image/logo/interweld.jpg",
+  
+      // Desktop
+      logoWidth: 397,
+      logoHeight: 59,
+  
+      // Mobile
+      mobileLogoWidth: 243,
+  
+      description: [
+        "Rangkaian produk InterWeld meliputi oven elektroda, aksesori las, serta berbagai peralatan las yang mendukung industri fabrikasi, konstruksi, manufaktur, pemeliharaan, dan perbaikan.",
+        "Produk InterWeld tersedia melalui Miller Indonesia, memberikan solusi pengelasan yang andal serta dukungan lokal yang terpercaya bagi pelanggan.",
+      ],
+  
+      type: "product",
+      products: INTERWELD_PRODUCTS,
+  
+      showContact: true,
+    },
 };
 
 export default async function BrandPage({
