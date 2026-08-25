@@ -171,9 +171,7 @@ export default function ContactPage() {
               {/* INSTAGRAM */}
 
               <a
-                href="https://instagram.com/millerweldingindonesia"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="b1 font-normal flex items-center gap-2 text-[#8B8B8B]"
               >
                 <Image

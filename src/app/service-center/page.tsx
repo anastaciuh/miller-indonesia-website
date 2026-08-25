@@ -1,7 +1,250 @@
+import {
+  Clock3,
+  Wrench,
+} from "lucide-react";
+
+import Carousel from "@/components/layout/Carousel";
+
+
+const SERVICE_IMAGES = [
+  {
+    mobile: "/images/home/mobile-1.jpg",
+    desktop: "/images/home/desktop-1.jpg",
+  },
+  {
+    mobile: "/images/home/mobile-2.jpg",
+    desktop: "/images/home/desktop-2.jpg",
+  },
+  {
+    mobile: "/images/home/mobile-3.jpg",
+    desktop: "/images/home/desktop-3.jpg",
+  },
+  {
+    mobile: "/images/home/mobile-4.jpg",
+    desktop: "/images/home/desktop-4.jpg",
+  },
+];
+
+
 export default function ServiceCenterPage() {
   return (
-    <main className="flex flex-1 flex-col items-center justify-center px-6 py-24">
-      <h1 className="text-3xl font-semibold tracking-tight">Service Center</h1>
+    <main className="bg-white">
+
+      <div className="container-custom">
+
+        {/* ================================================== */}
+        {/* SERVICE CAROUSEL */}
+        {/* ================================================== */}
+
+        <Carousel images={SERVICE_IMAGES} />
+
+
+        {/* ================================================== */}
+        {/* CONTENT */}
+        {/* ================================================== */}
+
+        <section className="px-6 pt-8 md:px-15 md:pt-10">
+
+          {/* ================================================== */}
+          {/* SERVICE CENTRE */}
+          {/* ================================================== */}
+
+          <div>
+
+            {/* MOBILE H2 */}
+
+            <h1 className="h2 font-black text-black md:hidden">
+              Service Centre
+            </h1>
+
+
+            {/* DESKTOP H1 */}
+
+            <h1 className="hidden h1 font-black text-black md:block">
+              Service Centre
+            </h1>
+
+
+            {/* DESCRIPTION */}
+
+            <p className="b1 mt-3 max-w-[850px] font-normal text-[#8B8B8B]">
+              Mesin Las Miller Bermasalah? Performa mesin mulai
+              menurun? Arc tidak stabil? Atau sudah waktunya
+              perawatan berkala? Serahkan pada Ahlinya! Kami
+              melayani service, maintenance, troubleshooting,
+              dan perbaikan mesin las Miller dengan penanganan
+              profesional untuk mengembalikan performa mesin
+              Anda agar bekerja maksimal.
+            </p>
+
+          </div>
+
+
+          {/* ================================================== */}
+          {/* SERVICE INFORMATION */}
+          {/* ================================================== */}
+
+          <div className="mt-8 grid grid-cols-1 gap-8 md:mt-10 md:grid-cols-2 md:gap-16">
+
+            {/* ================================================== */}
+            {/* JASA SERVIS */}
+            {/* ================================================== */}
+
+            <div>
+
+              <div className="flex items-center gap-2">
+
+                <Wrench
+                  size={18}
+                  strokeWidth={2.5}
+                  className="text-black"
+                />
+
+
+                {/* MOBILE H4 */}
+
+                <h2 className="h4 font-bold text-black md:hidden">
+                  Jasa Servis:
+                </h2>
+
+
+                {/* DESKTOP H3 */}
+
+                <h2 className="hidden h3 font-bold text-black md:block">
+                  Jasa Servis:
+                </h2>
+
+              </div>
+
+
+              <ul className="b1 mt-3 list-disc pl-8 font-normal text-[#8B8B8B]">
+
+                <li>
+                  Service profesional
+                </li>
+
+                <li>
+                  Pemeriksaan menyeluruh
+                </li>
+
+                <li>
+                  Penggantian spare part sesuai kebutuhan
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            {/* ================================================== */}
+            {/* JAM OPERASIONAL */}
+            {/* ================================================== */}
+
+            <div>
+
+              <div className="flex items-center gap-2">
+
+                <Clock3
+                  size={18}
+                  strokeWidth={2.5}
+                  className="text-black"
+                />
+
+
+                {/* MOBILE H4 */}
+
+                <h2 className="h4 font-bold text-black md:hidden">
+                  Jam Operasional:
+                </h2>
+
+
+                {/* DESKTOP H3 */}
+
+                <h2 className="hidden h3 font-bold text-black md:block">
+                  Jam Operasional:
+                </h2>
+
+              </div>
+
+
+              <div className="b1 mt-3 pl-7 font-normal text-[#8B8B8B]">
+
+                <p>
+                  Senin - Jumat
+                </p>
+
+                <p>
+                  08:00 - 16:30 WIB
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* ================================================== */}
+          {/* MAP */}
+          {/* ================================================== */}
+
+          <div className="mt-10 md:mt-14">
+
+            {/* MOBILE H3 */}
+
+            <h2 className="h3 font-bold text-black md:hidden">
+              Lihat di Peta
+            </h2>
+
+
+            {/* DESKTOP H1 */}
+
+            <h2 className="hidden h2 font-bold text-black md:block">
+              Lihat di Peta
+            </h2>
+
+
+            {/* MOBILE B1 */}
+
+            <p className="b1 mt-3 font-normal text-[#8B8B8B] md:hidden">
+              Jl Rajawali Selatan Raya no 1.
+              Pademangan, Jakarta Pusat.
+            </p>
+
+
+            {/* DESKTOP H3 */}
+
+            <p className="hidden b1 mt-3 font-normal text-[#8B8B8B] md:block">
+              Jl Rajawali Selatan Raya no 1.
+              Pademangan, Jakarta Pusat.
+            </p>
+
+
+            {/* ================================================== */}
+            {/* GOOGLE MAPS */}
+            {/* ================================================== */}
+
+            <div className="mt-6 overflow-hidden rounded-lg">
+
+              <iframe
+                src="https://www.google.com/maps?q=Jl+Rajawali+Selatan+Raya+No+1,+Pademangan,+Jakarta+Pusat&output=embed"
+                width="100%"
+                height="100%"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-[260px] w-full border-0 md:h-[380px]"
+                title="PT Dony Miller Welding"
+              />
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
     </main>
   );
 }
