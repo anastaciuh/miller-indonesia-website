@@ -167,7 +167,7 @@ export default function CategoryList({
             }`}
           >
             <Image
-              src="/component/button-left.jpg"
+              src="/component/button-left.png"
               alt="Previous"
               fill
               className="object-contain"
@@ -186,7 +186,7 @@ export default function CategoryList({
             }`}
           >
             <Image
-              src="/component/button-right.jpg"
+              src="/component/button-right.png"
               alt="Next"
               fill
               className="object-contain"
