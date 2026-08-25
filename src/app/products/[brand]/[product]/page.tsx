@@ -35,32 +35,29 @@ export default async function ProductPage({
       {/* ========================= */}
       {/* PRODUCT HEADER */}
       {/* ========================= */}
-
       <section className="px-10 pt-10">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-6">
           {/* BACK + PRODUCT CATEGORY */}
-
-          <div className="flex items-center">
+          <div className="flex min-w-0 items-center">
             <Link
               href={`/products/${brand}`}
-              className="relative h-[40px] w-[40px] shrink-0"
+              className="relative h-[36px] w-[36px] shrink-0"
             >
               <Image
-                src="/component/button-left.jpg"
+                src="/component/button-left.png"
                 alt="Back"
                 fill
                 className="object-contain"
               />
             </Link>
 
-            <h1 className="h1 ml-6 font-black text-black">
+            <h1 className="h1 ml-4 min-w-0 whitespace-normal break-words font-black text-black">
               {productData.title}
             </h1>
           </div>
 
           {/* DESKTOP CONTACT BUTTON */}
-
-          <div className="hidden md:block">
+          <div className="hidden shrink-0 md:block">
             <ContactButton />
           </div>
         </div>
@@ -69,7 +66,6 @@ export default async function ProductPage({
       {/* ========================= */}
       {/* PRODUCT LIST */}
       {/* ========================= */}
-
       <section className="mt-16">
         <ProductList
           products={productData.products}
@@ -80,7 +76,6 @@ export default async function ProductPage({
       {/* ========================= */}
       {/* MOBILE CONTACT BUTTON */}
       {/* ========================= */}
-
       <div className="mt-16 px-10 md:hidden">
         <ContactButton className="w-full justify-center" />
       </div>
