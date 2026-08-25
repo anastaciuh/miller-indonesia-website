@@ -23,8 +23,9 @@ export default function CategoryList({
   const containerRef = useRef<HTMLDivElement>(null);
 
   const [isDragging, setIsDragging] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const startX = useRef(0);
   const scrollStart = useRef(0);
@@ -32,7 +33,6 @@ export default function CategoryList({
   // =========================
   // CHECK SCROLL POSITION
   // =========================
-
   const updateScrollButtons = () => {
     if (!containerRef.current) return;
 
@@ -41,6 +41,11 @@ export default function CategoryList({
       scrollWidth,
       clientWidth,
     } = containerRef.current;
+
+    // CHECK APAKAH CARD OVERFLOW / BISA DI-SCROLL
+    const overflow = scrollWidth > clientWidth + 5;
+
+    setHasOverflow(overflow);
 
     setCanScrollLeft(scrollLeft > 5);
 
@@ -52,7 +57,6 @@ export default function CategoryList({
   // =========================
   // MOUSE DRAG
   // =========================
-
   const handleMouseDown = (
     e: React.MouseEvent<HTMLDivElement>
   ) => {
@@ -61,6 +65,7 @@ export default function CategoryList({
     setIsDragging(true);
 
     startX.current = e.pageX;
+
     scrollStart.current =
       containerRef.current.scrollLeft;
   };
@@ -70,7 +75,8 @@ export default function CategoryList({
   ) => {
     if (!isDragging || !containerRef.current) return;
 
-    const distance = e.pageX - startX.current;
+    const distance =
+      e.pageX - startX.current;
 
     containerRef.current.scrollLeft =
       scrollStart.current - distance;
@@ -87,7 +93,6 @@ export default function CategoryList({
   // =========================
   // BUTTON SCROLL
   // =========================
-
   const handleScroll = (
     direction: "left" | "right"
   ) => {
@@ -99,9 +104,11 @@ export default function CategoryList({
     if (!firstCard) return;
 
     const cardWidth = firstCard.clientWidth;
+
     const gap = 32;
 
-    const scrollAmount = cardWidth + gap;
+    const scrollAmount =
+      cardWidth + gap;
 
     containerRef.current.scrollBy({
       left:
@@ -115,7 +122,6 @@ export default function CategoryList({
   // =========================
   // LISTEN TO SCROLL
   // =========================
-
   useEffect(() => {
     const container = containerRef.current;
 
@@ -148,7 +154,9 @@ export default function CategoryList({
 
   return (
     <div>
+      {/* ========================= */}
       {/* TITLE + BUTTON */}
+      {/* ========================= */}
       <div className="mb-8 flex items-center justify-between px-10">
         <div className="h1 font-black text-black">
           Product Category
@@ -156,46 +164,56 @@ export default function CategoryList({
 
         <div className="flex gap-4">
           {/* LEFT */}
-          <button
-            type="button"
-            onClick={() => handleScroll("left")}
-            disabled={!canScrollLeft}
-            className={`relative h-[40px] w-[40px] transition-opacity ${
-              canScrollLeft
-                ? "cursor-pointer opacity-100"
-                : "cursor-default opacity-30"
-            }`}
-          >
-            <Image
-              src="/component/button-left.png"
-              alt="Previous"
-              fill
-              className="object-contain"
-            />
-          </button>
+          {hasOverflow && (
+            <button
+              type="button"
+              onClick={() =>
+                handleScroll("left")
+              }
+              disabled={!canScrollLeft}
+              className={`relative h-[40px] w-[40px] transition-opacity ${
+                canScrollLeft
+                  ? "cursor-pointer opacity-100"
+                  : "cursor-default opacity-30"
+              }`}
+            >
+              <Image
+                src="/component/button-left.png"
+                alt="Previous"
+                fill
+                className="object-contain"
+              />
+            </button>
+          )}
 
           {/* RIGHT */}
-          <button
-            type="button"
-            onClick={() => handleScroll("right")}
-            disabled={!canScrollRight}
-            className={`relative h-[40px] w-[40px] transition-opacity ${
-              canScrollRight
-                ? "cursor-pointer opacity-100"
-                : "cursor-default opacity-30"
-            }`}
-          >
-            <Image
-              src="/component/button-right.png"
-              alt="Next"
-              fill
-              className="object-contain"
-            />
-          </button>
+          {hasOverflow && (
+            <button
+              type="button"
+              onClick={() =>
+                handleScroll("right")
+              }
+              disabled={!canScrollRight}
+              className={`relative h-[40px] w-[40px] transition-opacity ${
+                canScrollRight
+                  ? "cursor-pointer opacity-100"
+                  : "cursor-default opacity-30"
+              }`}
+            >
+              <Image
+                src="/component/button-right.png"
+                alt="Next"
+                fill
+                className="object-contain"
+              />
+            </button>
+          )}
         </div>
       </div>
 
+      {/* ========================= */}
       {/* CATEGORY CAROUSEL */}
+      {/* ========================= */}
       <div
         ref={containerRef}
         onMouseDown={handleMouseDown}
