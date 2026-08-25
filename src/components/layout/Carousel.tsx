@@ -108,7 +108,7 @@ export default function Carousel({
         className="absolute left-4 top-1/2 -translate-y-1/2"
       >
         <Image
-          src="/component/button-left.jpg"
+          src="/component/button-left.png"
           alt=""
           width={40}
           height={40}
@@ -128,7 +128,7 @@ export default function Carousel({
         className="absolute right-4 top-1/2 -translate-y-1/2"
       >
         <Image
-          src="/component/button-right.jpg"
+          src="/component/button-right.png"
           alt=""
           width={40}
           height={40}
