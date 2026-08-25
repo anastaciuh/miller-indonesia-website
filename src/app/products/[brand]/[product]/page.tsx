@@ -16,15 +16,24 @@ export default async function ProductPage({
 }) {
   const { brand, product } = await params;
 
+  // =========================
+  // GET BRAND
+  // =========================
   const brandData =
-    BRAND_PRODUCTS[brand as keyof typeof BRAND_PRODUCTS];
+    BRAND_PRODUCTS[
+      brand as keyof typeof BRAND_PRODUCTS
+    ];
 
   if (!brandData) {
     return <div>Brand tidak ditemukan</div>;
   }
 
-  const productData =
-    brandData[product as keyof typeof brandData];
+  // =========================
+  // GET PRODUCT
+  // =========================
+  const productData = Object.entries(brandData).find(
+    ([key]) => key === product
+  )?.[1];
 
   if (!productData) {
     return <div>Product tidak ditemukan</div>;
