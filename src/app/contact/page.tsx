@@ -92,7 +92,7 @@ export default function ContactPage() {
 
 
             <div className="b1 font-normal mt-3 pl-7 text-[#8B8B8B]">
-              <p>Donny Miller</p>
+              <p>Dony Miller</p>
               <p>+6281314223938</p>
             </div>
 

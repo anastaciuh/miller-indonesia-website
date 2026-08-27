@@ -1,65 +1,304 @@
 import Image from "next/image";
 
-export default function Home() {
+import Carousel from "@/components/layout/Carousel";
+
+import CategoryList from "@/components/layout/CategoryList";
+
+import BlogList from "@/components/layout/BlogList";
+
+import SeeMoreButton from "@/components/layout/SeeMoreButton";
+
+import { HOME_CAROUSEL_IMAGES } from "@/constants/home";
+
+import { HOME_CATEGORIES } from "@/constants/categories-home";
+
+import { BLOGS } from "@/constants/blog";
+
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="bg-white">
+
+      {/* ================================================== */}
+      {/* HERO CAROUSEL */}
+      {/* ================================================== */}
+
+      <div className="container-custom">
+
+        <Carousel
+          images={HOME_CAROUSEL_IMAGES}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            ucil bedil
-          </h1>
-          <p className="h1 text-light-gray dark:text-light-gray">
-            yey udah bisa sayang uda dirapihin workspacenya C:{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-miller-blue dark:text-miller-blue"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-miller-blue dark:text-miller-blue"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+
+      </div>
+
+
+      {/* ================================================== */}
+      {/* MILLER INDONESIA */}
+      {/* ================================================== */}
+
+      <section className="container-custom px-6 pt-8 md:px-15 md:pt-10">
+
+        {/* MOBILE H1 */}
+
+        <h1 className="h1 font-black text-black md:hidden">
+          Miller Indonesia
+        </h1>
+
+
+        {/* DESKTOP H1 */}
+
+        <h1 className="hidden h1 font-black text-black md:block">
+          Miller Indonesia
+        </h1>
+
+
+        {/* MOBILE H3 */}
+
+        <h2 className="h3 mt-2 font-bold text-black md:hidden">
+          Distributor Miller Welding &amp;
+          Hypertherm Plasma Cutting
+        </h2>
+
+
+        {/* DESKTOP H2 */}
+
+        <h2 className="hidden h2 leading-6 font-bold text-black md:block">
+          Distributor Miller Welding &amp;
+          Hypertherm Plasma Cutting
+        </h2>
+
+
+        <p className="b1 mt-8 max-w-[850px] font-normal text-[#8B8B8B]">
+          Miller Indonesia merupakan distributor terpercaya solusi pengelasan dan pemotongan yang melayani
+          berbagai industri di Indonesia. Dengan pengalaman yang luas, kami menyediakan produk dan solusi
+          berkualitas untuk sektor minyak dan gas, pembangkit listrik, kilang, fabrikasi, perpipaan, serta
+          berbagai industri lainnya.
+        </p>
+
+      </section>
+
+
+      {/* ================================================== */}
+      {/* PRODUCTS */}
+      {/* ================================================== */}
+
+      <section className="mt-16 md:mt-20">
+
+      <CategoryList
+        categories={HOME_CATEGORIES}
+        title="Product"
+      />  
+
+      </section>
+
+
+      {/* ================================================== */}
+      {/* BLOGS */}
+      {/* ================================================== */}
+
+      <section className="mt-16 md:mt-20">
+
+        <BlogList
+          blogs={BLOGS}
+        />
+
+      </section>
+
+
+      {/* ================================================== */}
+      {/* SERVICE CENTRE */}
+      {/* ================================================== */}
+
+      <section className="container-custom mt-24 md:mt-20 md:px-15">
+
+        {/* ================================================== */}
+        {/* MOBILE */}
+        {/* ================================================== */}
+
+        <div className="relative aspect-[8/13] w-full overflow-hidden md:hidden">
+
+          {/* MOBILE IMAGE */}
+
+          <Image
+            src="/images/home/home-service-mobile.jpg"
+            alt="Miller Indonesia Service Centre"
+            fill
+            className="object-cover"
+          />
+
+
+          {/* SERVICE CARD */}
+
+          <div className="absolute bottom-8 left-6 right-6 rounded-lg bg-white p-6">
+
+            <h2 className="h1 font-black text-black">
+              Service Centre
+            </h2>
+
+
+            <p className="b1 mt-3 font-normal text-[#8B8B8B]">
+              Service Center kami siap memberikan dukungan, mulai dari informasi produk, demonstrasi mesin,
+              perbaikan dan perawatan, konsultasi teknis, hingga bantuan layanan agar mesin Anda tetap bekerja
+              secara optimal.
+            </p>
+
+
+            <SeeMoreButton
+              href="/service-center"
+              className="mt-6 w-full"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+          </div>
+
         </div>
-      </main>
-    </div>
+
+
+        {/* ================================================== */}
+        {/* DESKTOP */}
+        {/* ================================================== */}
+
+        <div className="relative hidden min-h-[400px] overflow-hidden rounded-lg md:block">
+
+          {/* DESKTOP IMAGE */}
+
+          <Image
+            src="/images/home/home-service-desktop.jpg"
+            alt="Miller Indonesia Service Centre"
+            fill
+            className="object-cover"
+          />
+
+
+          {/* SERVICE CARD */}
+
+          <div className="absolute bottom-8 right-8 w-[420px] rounded-lg bg-white p-6">
+
+            <h2 className="h1 font-black text-black">
+              Service Centre
+            </h2>
+
+
+            <p className="b1 mt-3 font-normal text-[#8B8B8B]">
+              Service Center kami siap memberikan dukungan, mulai dari informasi produk, demonstrasi mesin,
+              perbaikan dan perawatan, konsultasi teknis, hingga bantuan layanan agar mesin Anda tetap bekerja
+              secara optimal.
+            </p>
+
+
+            <SeeMoreButton
+              href="/service-center"
+              className="mt-6 w-fit"
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* ================================================== */}
+      {/* CONTACT US */}
+      {/* ================================================== */}
+
+      <section className="container-custom mt-16 md:mt-32">
+
+        {/* ================================================== */}
+        {/* MOBILE */}
+        {/* ================================================== */}
+
+        <div className="md:hidden">
+
+          {/* CONTENT */}
+
+          <div className="px-6">
+
+            <h2 className="h1 font-black text-black">
+              Contact Us
+            </h2>
+
+
+            <p className="b1 mt-4 font-normal text-[#8B8B8B]">
+              Konsultasikan kebutuhan Anda dengan
+              tim ahli kami. Dapatkan informasi
+              produk, demo mesin, spesifikasi teknis,
+              katalog, brosur, hingga penawaran
+              harga terbaik.
+            </p>
+
+
+            <SeeMoreButton
+              href="/contact"
+              className="mt-6 w-full"
+            />
+
+          </div>
+
+
+          <div className="mt-24 bg-white">
+
+            <Image
+              src="/images/home/frame.jpg"
+              alt="Contact Miller Indonesia"
+              width={1200}
+              height={1400}
+              className="h-auto w-full object-cover"
+            />
+
+          </div>
+
+        </div>
+
+
+        {/* ================================================== */}
+        {/* DESKTOP */}
+        {/* ================================================== */}
+
+        <div className="relative hidden min-h-[420px] md:block">
+
+          {/* IMAGE AREA */}
+
+          <div className="absolute bottom-0 right-0 h-[125%] w-[75%] overflow-hidden">
+
+            <Image
+              src="/images/home/home-contact-desktop.png"
+              alt="Contact Miller Indonesia"
+              fill
+              className="object-contain object-right-bottom"
+            />
+
+          </div>
+
+
+          {/* CONTENT */}
+
+          <div className="relative z-10 w-[500px] px-15 pt-10">
+
+            <h2 className="h1 font-black text-black">
+              Contact Us
+            </h2>
+
+
+            <p className="b1 mt-4 font-normal text-[#8B8B8B]">
+              Konsultasikan kebutuhan Anda dengan
+              tim ahli kami. Dapatkan informasi
+              produk, demo mesin, spesifikasi teknis,
+              katalog, brosur, hingga penawaran
+              harga terbaik.
+            </p>
+
+
+            <SeeMoreButton
+              href="/contact"
+              className="mt-6 w-fit"
+            />
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
   );
 }
