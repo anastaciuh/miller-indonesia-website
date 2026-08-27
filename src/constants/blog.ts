@@ -59,7 +59,7 @@ export type Blog = {
       slug: "blog-7",
       image: "/images/blog/cover-7.jpg",
       author: "Dony Miller",
-      title: "Kenapa Beli Mesin Second dari Distributor Terpercaya?",
+      title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Indonesia Solusinya",
       description:
         "Membeli mesin welding second dapat menjadi alternatif untuk mendapatkan equipment berkualitas dengan investasi yang lebih efisien. Namun, kondisi dan riwayat penggunaan mesin perlu diperhatikan agar equipment tetap bekerja.  ",
     },
