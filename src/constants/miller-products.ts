@@ -190,7 +190,7 @@ export const MILLER_PRODUCTS = {
 
       {
         image: "/image/miller/tig-gtaw/dynasty-280.jpg",
-        title: "Dynasty 280 series",
+        title: "Dynasty 280 Series",
         description: "250 amp rating available in 2 models : standard and Deluxe",
         pdf: "/pdf/miller/tig-gtaw/dynasty-280.pdf",
       },
@@ -199,7 +199,7 @@ export const MILLER_PRODUCTS = {
         image: "/image/miller/tig-gtaw/dynasty-400.jpg",
         title: "Dynasty 400",
         description: "400 amp rating",
-        pdf: "/pdf/miller/tig-gtaw/dynasty-400  .pdf",
+        pdf: "/pdf/miller/tig-gtaw/dynasty-400.pdf",
       },
 
       {
@@ -211,7 +211,7 @@ export const MILLER_PRODUCTS = {
 
       {
         image: "/image/miller/tig-gtaw/maxstar-161.jpg",
-        title: "Maxstar 161 series",
+        title: "Maxstar 161 Series",
         description: "160 amp rating available in Lift Arc TIG and High Frequency model",
         pdf: "/pdf/miller/tig-gtaw/maxstar-161.pdf",
       },
@@ -225,7 +225,7 @@ export const MILLER_PRODUCTS = {
 
       {
         image: "/image/miller/tig-gtaw/maxstar-280.jpg",
-        title: "Maxstar 280 series",
+        title: "Maxstar 280 Series",
         description: "200 amp rating available in 2 models : standard and Deluxe.",
         pdf: "/pdf/miller/tig-gtaw/maxstar-280.pdf",
       },

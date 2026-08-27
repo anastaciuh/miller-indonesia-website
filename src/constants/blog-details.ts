@@ -371,7 +371,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
 {
     slug: "blog-7",
 
-    title: "Kenapa Beli Mesin Second dari Distributor Terpercaya?",
+    title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Indonesia Solusinya",
 
     image: "/images/blog/blog-7.jpg",
 
