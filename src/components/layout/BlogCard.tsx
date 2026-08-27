@@ -12,7 +12,6 @@ type BlogCardProps = Blog & {
 export default function BlogCard({
   slug,
   image,
-  tag,
   author,
   title,
   description,
@@ -38,18 +37,6 @@ export default function BlogCard({
             fill
             className="object-cover"
           />
-
-
-          {/* TAG */}
-
-          <div className="absolute left-4 top-4 rounded-sm bg-[#168BC7] px-2 py-1 text-white">
-
-            <span className="text-[10px] leading-none">
-              {tag}
-            </span>
-
-          </div>
-
         </div>
 
 
@@ -82,7 +69,7 @@ export default function BlogCard({
 
           {/* DESKTOP H3 */}
 
-          <h2 className="hidden h3 mt-4 font-bold text-black md:block">
+          <h2 className="hidden h3 mt-4 leading-6 font-bold text-black md:block">
             {title}
           </h2>
 

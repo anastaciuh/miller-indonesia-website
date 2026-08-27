@@ -1,11 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import Image from "next/image";
 
 import BlogCard from "@/components/layout/BlogCard";
 
-import type { Blog } from "@/constants/blog.ts";
+import SeeMoreButton from "@/components/layout/SeeMoreButton";
+
+import type { Blog } from "@/constants/blog";
 
 
 type BlogListProps = {
@@ -16,20 +19,21 @@ type BlogListProps = {
 export default function BlogList({
   blogs,
 }: BlogListProps) {
-  const containerRef =
-    useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const [isDragging, setIsDragging] =
-    useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const [canScrollLeft, setCanScrollLeft] =
-    useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
 
-  const [canScrollRight, setCanScrollRight] =
-    useState(true);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const startX = useRef(0);
+
   const scrollStart = useRef(0);
+
+  const didDrag = useRef(false);
 
 
   // =========================
@@ -44,6 +48,11 @@ export default function BlogList({
       scrollWidth,
       clientWidth,
     } = containerRef.current;
+
+    const overflow =
+      scrollWidth > clientWidth + 5;
+
+    setHasOverflow(overflow);
 
     setCanScrollLeft(
       scrollLeft > 5
@@ -67,6 +76,8 @@ export default function BlogList({
 
     setIsDragging(true);
 
+    didDrag.current = false;
+
     startX.current = e.pageX;
 
     scrollStart.current =
@@ -87,6 +98,17 @@ export default function BlogList({
     const distance =
       e.pageX - startX.current;
 
+
+    // Kalau mouse bergerak lebih dari 5px,
+    // anggap sebagai drag, bukan click
+
+    if (Math.abs(distance) > 5) {
+      didDrag.current = true;
+    }
+
+
+    e.preventDefault();
+
     containerRef.current.scrollLeft =
       scrollStart.current - distance;
   };
@@ -99,6 +121,22 @@ export default function BlogList({
 
   const handleMouseLeave = () => {
     setIsDragging(false);
+  };
+
+
+  // =========================
+  // PREVENT CLICK AFTER DRAG
+  // =========================
+
+  const handleClickCapture = (
+    e: React.MouseEvent<HTMLDivElement>
+  ) => {
+    if (didDrag.current) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      didDrag.current = false;
+    }
   };
 
 
@@ -176,72 +214,81 @@ export default function BlogList({
   return (
     <div>
 
-      {/* ================================================== */}
+      {/* ========================= */}
       {/* TITLE + BUTTON */}
-      {/* ================================================== */}
+      {/* ========================= */}
 
       <div className="mb-8 flex items-center justify-between px-6 md:px-15">
 
         <div className="h1 font-black text-black">
-          Blog
+          Blogs
         </div>
 
 
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
 
           {/* LEFT */}
 
-          <button
-            type="button"
-            onClick={() =>
-              handleScroll("left")
-            }
-            disabled={!canScrollLeft}
-            className={`relative h-[40px] w-[40px] transition-opacity ${
-              canScrollLeft
-                ? "cursor-pointer opacity-100"
-                : "cursor-default opacity-30"
-            }`}
-          >
-            <Image
-              src="/component/button-left.png"
-              alt="Previous"
-              fill
-              className="object-contain"
-            />
-          </button>
+          {hasOverflow && (
+            <button
+              type="button"
+              onClick={() =>
+                handleScroll("left")
+              }
+              disabled={!canScrollLeft}
+              className={`relative h-[40px] w-[40px] transition-opacity ${
+                canScrollLeft
+                  ? "cursor-pointer opacity-100"
+                  : "cursor-default opacity-30"
+              }`}
+            >
+              <Image
+                src="/component/button-left.png"
+                alt="Previous"
+                fill
+                className="object-contain"
+              />
+            </button>
+          )}
 
 
           {/* RIGHT */}
 
-          <button
-            type="button"
-            onClick={() =>
-              handleScroll("right")
-            }
-            disabled={!canScrollRight}
-            className={`relative h-[40px] w-[40px] transition-opacity ${
-              canScrollRight
-                ? "cursor-pointer opacity-100"
-                : "cursor-default opacity-30"
-            }`}
-          >
-            <Image
-              src="/component/button-right.png"
-              alt="Next"
-              fill
-              className="object-contain"
-            />
-          </button>
+          {hasOverflow && (
+            <button
+              type="button"
+              onClick={() =>
+                handleScroll("right")
+              }
+              disabled={!canScrollRight}
+              className={`relative h-[40px] w-[40px] transition-opacity ${
+                canScrollRight
+                  ? "cursor-pointer opacity-100"
+                  : "cursor-default opacity-30"
+              }`}
+            >
+              <Image
+                src="/component/button-right.png"
+                alt="Next"
+                fill
+                className="object-contain"
+              />
+            </button>
+          )}
+
+
+          {/* SEE MORE */}
+
+          <SeeMoreButton href="/blog" />
 
         </div>
 
       </div>
 
 
-      {/* ================================================== */}
+      {/* ========================= */}
       {/* BLOG CAROUSEL */}
-      {/* ================================================== */}
+      {/* ========================= */}
 
       <div
         ref={containerRef}
@@ -249,7 +296,9 @@ export default function BlogList({
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseLeave}
-        className={`w-full overflow-x-auto overflow-y-hidden ${
+        onDragStart={(e) => e.preventDefault()}
+        onClickCapture={handleClickCapture}
+        className={`w-screen overflow-x-auto overflow-y-hidden ${
           isDragging
             ? "cursor-grabbing"
             : "cursor-grab"
@@ -261,7 +310,12 @@ export default function BlogList({
         }}
       >
 
-        <div className="flex w-max min-w-max gap-8 px-6 md:px-15">
+        <div className="flex w-max min-w-max gap-8">
+
+          {/* Extra space kiri */}
+
+          <div className="w-[2px] shrink-0" />
+
 
           {blogs.map((blog) => (
             <BlogCard
@@ -269,6 +323,11 @@ export default function BlogList({
               {...blog}
             />
           ))}
+
+
+          {/* Extra space kanan */}
+
+          <div className="w-[2px] shrink-0" />
 
         </div>
 

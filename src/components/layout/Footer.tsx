@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown } from "lucide-react";
 
 const PRODUCT_BRANDS = [
@@ -19,6 +20,8 @@ const PRODUCT_BRANDS = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
   const [isProductsOpen, setIsProductsOpen] =
     useState(false);
 
@@ -56,7 +59,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#0C182A] text-white mt-32">
+    <footer
+      className={`w-full bg-[#0C182A] text-white ${
+        pathname === "/" ? "mt-0" : "mt-32"
+      }`}
+    >
 
       {/* ================================================== */}
       {/* DESKTOP FOOTER */}
@@ -636,8 +643,10 @@ export default function Footer() {
 
         <div className="w-full bg-[#138CCC]">
 
-         <div className="container-custom flex h-[107px] items-center px-8">
-           <div className="flex items-center gap-3 text-[10px]">
+          <div className="container-custom flex h-[107px] items-center px-8">
+
+            <div className="flex items-center gap-3 text-[10px]">
+
               <Image
                 src="/images/home/logo-mobile.png"
                 alt="Miller Indonesia"
@@ -646,16 +655,16 @@ export default function Footer() {
                 className="h-auto w-[150px]"
               />
 
-                <span className="h-10 w-1 bg-white/80" />
+              <span className="h-10 w-1 bg-white/80" />
 
-                <span className="b2">
+              <span className="b2">
                 Distributor Miller Welding Machine &amp;
                 Hypertherm Plasma Cutting
               </span>
-              
-           </div>
 
-         </div>
+            </div>
+
+          </div>
 
         </div>
 

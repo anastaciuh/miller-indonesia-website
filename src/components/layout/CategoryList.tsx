@@ -15,10 +15,12 @@ type Category = {
 
 type CategoryListProps = {
   categories: Category[];
+  title?: string;
 };
 
 export default function CategoryList({
   categories,
+  title = "Product Category",
 }: CategoryListProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -159,7 +161,7 @@ export default function CategoryList({
       {/* ========================= */}
       <div className="mb-8 flex items-center justify-between px-10">
         <div className="h1 font-black text-black">
-          Product Category
+          {title}
         </div>
 
         <div className="flex gap-4">
