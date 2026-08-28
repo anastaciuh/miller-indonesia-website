@@ -198,7 +198,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
 {
     slug: "blog-4",
 
-    title: "MILLER INDONESIA – Distributor Miller Welding & Hypertherm Plasma Cutting",
+    title: "MILLER WELDING INDONESIA – Distributor Miller Welding & Hypertherm Plasma Cutting",
 
     image: "/images/blog/blog-4.jpg",
 
@@ -209,13 +209,13 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "Miller Indonesia merupakan salah satu perusahaan yang bergerak dalam distribusi produk welding dan cutting equipment di Indonesia. Berdiri sejak 2005, dengan pengalaman melayani pasar sejak 1995, Miller Indonesia telah menyediakan berbagai solusi untuk kebutuhan industri dan proyek profesional di Indonesia.\n \nProduk dan solusi yang tersedia mencakup berbagai kebutuhan mulai dari welding equipment, plasma cutting, hingga consumables dan equipment tools untuk mendukung berbagai pekerjaan industri. Miller Indonesia telah melayani berbagai kebutuhan proyek dan perusahaan di sektor:",
+          "Miller Welding Indonesia merupakan salah satu perusahaan yang bergerak dalam distribusi produk welding dan cutting equipment di Indonesia. Berdiri sejak 2005, dengan pengalaman melayani pasar sejak 1995, Miller Welding Indonesia telah menyediakan berbagai solusi untuk kebutuhan industri dan proyek profesional di Indonesia.\n \nProduk dan solusi yang tersedia mencakup berbagai kebutuhan mulai dari welding equipment, plasma cutting, hingga consumables dan equipment tools untuk mendukung berbagai pekerjaan industri. Miller Welding Indonesia telah melayani berbagai kebutuhan proyek dan perusahaan di sektor:",
       },
 
       {
         type: "paragraph",
         text:
-          "● Oil & Gas\n● Power Plant\n● Refinery\n● Fabrication\n● Pipeline\n● Konstruksi\n● Manufaktur\n● Berbagai kebutuhan industri lainnya\n \nSelain menyediakan produk, Miller Indonesia juga didukung oleh service center yang melayani kebutuhan service, maintenance, troubleshooting, dan perbaikan mesin las Miller.",
+          "● Oil & Gas\n● Power Plant\n● Refinery\n● Fabrication\n● Pipeline\n● Konstruksi\n● Manufaktur\n● Berbagai kebutuhan industri lainnya\n \nSelain menyediakan produk, Miller Welding Indonesia juga didukung oleh service center yang melayani kebutuhan service, maintenance, troubleshooting, dan perbaikan mesin las Miller.",
       },
 
         {
@@ -226,12 +226,12 @@ export const BLOG_DETAILS: BlogDetail[] = [
         {
             type: "paragraph",
             text:
-              "Miller Indonesia menyediakan layanan konsultasi, dan demo dan trial mesin untuk membantu Anda menentukan equipment yang sesuai dengan kebutuhan pekerjaan.\n \nTim kami juga siap membantu memberikan informasi mengenai spesifikasi teknis, aplikasi, katalog, brosur, hingga rekomendasi equipment sesuai kebutuhan proyek",
+              "Miller Welding Indonesia menyediakan layanan konsultasi, dan demo dan trial mesin untuk membantu Anda menentukan equipment yang sesuai dengan kebutuhan pekerjaan.\n \nTim kami juga siap membantu memberikan informasi mengenai spesifikasi teknis, aplikasi, katalog, brosur, hingga rekomendasi equipment sesuai kebutuhan proyek",
           },
 
           {
             type: "heading",
-            text: "Kunjungi Miller Indonesia",
+            text: "Kunjungi Miller Welding Indonesia",
           },
   
 
@@ -261,7 +261,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "Performa mesin mulai menurun? Arc tidak stabil? Atau sudah waktunya melakukan perawatan berkala?\n \nMesin las yang digunakan secara rutin membutuhkan perawatan dan pemeriksaan berkala agar performanya tetap optimal. Masalah seperti arc yang tidak stabil, output yang menurun, atau mesin yang sulit digunakan dapat mengganggu produktivitas dan pekerjaan di lapangan.\n \nMiller Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan mesin las Miller dengan pemeriksaan dan penanganan sesuai kondisi mesin.\n \nLayanan Service Center:",
+          "Performa mesin mulai menurun? Arc tidak stabil? Atau sudah waktunya melakukan perawatan berkala?\n \nMesin las yang digunakan secara rutin membutuhkan perawatan dan pemeriksaan berkala agar performanya tetap optimal. Masalah seperti arc yang tidak stabil, output yang menurun, atau mesin yang sulit digunakan dapat mengganggu produktivitas dan pekerjaan di lapangan.\n \nMiller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan mesin las Miller dengan pemeriksaan dan penanganan sesuai kondisi mesin.\n \nLayanan Service Center:",
       },
 
       {
@@ -363,7 +363,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
         {
             type: "paragraph",
             text:
-            "Dengan memahami karakteristik equipment, menggunakan parameter yang tepat, dan melakukan maintenance secara berkala, berbagai masalah yang umum terjadi di lapangan dapat diminimalkan.\n \nJika performa mesin mulai berubah, arc tidak stabil, atau membutuhkan pemeriksaan dan maintenance,  Miller Indonesia  siap membantu melakukan troubleshooting dan penanganan equipment sesuai kebutuhan.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
+            "Dengan memahami karakteristik equipment, menggunakan parameter yang tepat, dan melakukan maintenance secara berkala, berbagai masalah yang umum terjadi di lapangan dapat diminimalkan.\n \nJika performa mesin mulai berubah, arc tidak stabil, atau membutuhkan pemeriksaan dan maintenance,  Miller Welding Indonesia  siap membantu melakukan troubleshooting dan penanganan equipment sesuai kebutuhan.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
         },
     ],
 },
@@ -371,7 +371,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
 {
     slug: "blog-7",
 
-    title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Indonesia Solusinya",
+    title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Welding Indonesia Solusinya",
 
     image: "/images/blog/blog-7.jpg",
 
@@ -394,7 +394,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
         {
             type: "paragraph",
             text:
-            "Dengan memilih mesin second dari sumber yang terpercaya, Anda dapat memperoleh equipment yang sesuai kebutuhan dengan risiko pembelian yang lebih rendah.\n \nMiller Indonesia menyediakan pilihan equipment second serta dukungan konsultasi untuk membantu Anda menemukan mesin yang sesuai dengan kebutuhan pekerjaan.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
+            "Dengan memilih mesin second dari sumber yang terpercaya, Anda dapat memperoleh equipment yang sesuai kebutuhan dengan risiko pembelian yang lebih rendah.\n \nMiller Welding Indonesia menyediakan pilihan equipment second serta dukungan konsultasi untuk membantu Anda menemukan mesin yang sesuai dengan kebutuhan pekerjaan.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
         },
     ],
 },
@@ -413,7 +413,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "Setelah membeli equipment, dukungan service dan maintenance menjadi bagian penting untuk menjaga performa mesin tetap optimal. Miller Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan equipment yang dapat ditangani oleh tim service center.",
+          "Setelah membeli equipment, dukungan service dan maintenance menjadi bagian penting untuk menjaga performa mesin tetap optimal. Miller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan equipment yang dapat ditangani oleh tim service center.",
       },
 
       {
@@ -424,18 +424,18 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "✔️ Tidak selalu. Miller Indonesia dapat membantu menangani kebutuhan service dan troubleshooting berbagai welding equipment dan equipment terkait, sesuai dengan jenis mesin, kondisi kerusakan, dan kemampuan penanganan service center.",
+          "✔️ Tidak selalu. Miller Welding Indonesia dapat membantu menangani kebutuhan service dan troubleshooting berbagai welding equipment dan equipment terkait, sesuai dengan jenis mesin, kondisi kerusakan, dan kemampuan penanganan service center.",
       },
 
       {
         type: "heading",
-        text: "Apa saja layanan yang tersedia di Service Center Miller Indonesia?",
+        text: "Apa saja layanan yang tersedia di Service Center Miller Welding Indonesia?",
       },
 
       {
         type: "paragraph",
         text:
-          "✔️ Miller Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan equipment untuk membantu menjaga performa mesin tetap optimal.",
+          "✔️ Miller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan sparepart serta equipment untuk membantu menjaga performa mesin tetap optimal.",
       },
 
       {
@@ -446,7 +446,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "✔️ Service Center Miller Indonesia dapat menangani berbagai welding equipment dan equipment terkait, sesuai dengan jenis, model, kondisi mesin, serta kemampuan teknis yang tersedia.",
+          "✔️ Service Center Miller Welding Indonesia dapat menangani berbagai welding equipment dan equipment terkait, sesuai dengan jenis, model, kondisi mesin, serta kemampuan teknis yang tersedia.",
       },
       
       {
@@ -468,13 +468,24 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "✔️ Bisa. Customer dapat menghubungi tim Miller Indonesia terlebih dahulu untuk mengkonsultasikan kondisi dan kebutuhan equipment sebelum menentukan langkah service atau maintenance.",
+          "✔️ Bisa. Customer dapat menghubungi tim Miller Welding Indonesia terlebih dahulu untuk mengkonsultasikan kondisi dan kebutuhan equipment sebelum menentukan langkah service atau maintenance.",
+      },
+
+      {
+        type: "heading",
+        text: "Apakah bisa melakukan demo mesin?",
+      },
+      
+      {
+        type: "paragraph",
+        text:
+          "✔️ Bisa. Silakan hubungi tim Miller Welding Indonesia untuk mengajukan demo mesin. Tim kami akan membantu melakukan demonstrasi penggunaan dan performa mesin sesuai request & kebutuhan Anda.",
       },
 
         {
             type: "paragraph",
             text:
-            "Sampaikan brand, tipe/model, serial number, serta kendala yang terjadi kepada tim kami agar dapat membantu menentukan langkah pemeriksaan yang sesuai. Konsultasikan kebutuhan service dan maintenance equipment Anda bersama tim Miller Indonesia.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
+            "Sampaikan brand, tipe/model, serial number, serta kendala yang terjadi kepada tim kami agar dapat membantu menentukan langkah pemeriksaan yang sesuai. Konsultasikan kebutuhan service dan maintenance equipment Anda bersama tim Miller Welding Indonesia.\n \n📩 Hubungi kami untuk informasi harga, spesifikasi lengkap, dan penawaran terbaik.\n \n📞Dony Miller\n📱 +6281314223938",
         },
     ],
 },

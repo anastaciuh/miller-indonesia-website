@@ -188,7 +188,7 @@ const BRANDS: Record<string, Brand> = {
   
       description: [
         "Rangkaian produk InterWeld meliputi oven elektroda, aksesori las, serta berbagai peralatan las yang mendukung industri fabrikasi, konstruksi, manufaktur, pemeliharaan, dan perbaikan.",
-        "Produk InterWeld tersedia melalui Miller Indonesia, memberikan solusi pengelasan yang andal serta dukungan lokal yang terpercaya bagi pelanggan.",
+        "Produk InterWeld tersedia melalui Miller Welding Indonesia, memberikan solusi pengelasan yang andal serta dukungan lokal yang terpercaya bagi pelanggan.",
       ],
   
       type: "product",
@@ -212,7 +212,7 @@ const BRANDS: Record<string, Brand> = {
 
     description: [
       "Interflex merupakan merek consumable pengelasan yang menyediakan elektroda, kawat las, dan berbagai produk pengelasan berkualitas tinggi untuk kebutuhan industri.",
-      "Dikenal dengan performa yang andal dan kualitas yang konsisten, produk Interflex didistribusikan di Indonesia oleh PT Duta Graha Miller (Miller Indonesia), sehingga memudahkan para profesional di seluruh Indonesia dalam memperoleh solusi pengelasan yang terpercaya.",
+      "Dikenal dengan performa yang andal dan kualitas yang konsisten, produk Interflex didistribusikan di Indonesia oleh Miller Welding Indonesia, sehingga memudahkan para profesional di seluruh Indonesia dalam memperoleh solusi pengelasan yang terpercaya.",
     ],
 
     type: "preview",
@@ -260,7 +260,7 @@ const BRANDS: Record<string, Brand> = {
 
     description: [
       "STANLEY Powertools & Handtools telah menghadirkan peralatan terpercaya dan solusi inovatif bagi para profesional serta pengguna DIY selama lebih dari 175 tahun.",
-      "Dikenal karena kualitas, daya tahan, dan performanya, produk STANLEY dirancang untuk mendukung berbagai kebutuhan mulai dari konstruksi, pertukangan kayu, manufaktur, pemeliharaan, hingga industri otomotif. STANLEY hand tools dan power tools tersedia melalui Miller Indonesia.",
+      "Dikenal karena kualitas, daya tahan, dan performanya, produk STANLEY dirancang untuk mendukung berbagai kebutuhan mulai dari konstruksi, pertukangan kayu, manufaktur, pemeliharaan, hingga industri otomotif. STANLEY hand tools dan power tools tersedia melalui Miller Welding Indonesia.",
     ],
 
     type: "preview",

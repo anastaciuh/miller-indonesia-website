@@ -35,9 +35,9 @@ export type Blog = {
       slug: "blog-4",
       image: "/images/blog/cover-4.jpg",
       author: "Dony Miller",
-      title: "MILLER INDONESIA – Distributor Miller Welding & Hypertherm Plasma Cutting",
+      title: "MILLER WELDING INDONESIA – Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
       description:
-        "Miller Indonesia merupakan salah satu perusahaan yang bergerak dalam distribusi produk welding dan cutting equipment di Indonesia. Berdiri sejak 2005, dengan pengalaman melayani pasar sejak 1995.",
+        "Miller Welding Indonesia merupakan salah satu perusahaan yang bergerak dalam distribusi produk welding dan cutting equipment di Indonesia. Berdiri sejak 2005, dengan pengalaman melayani pasar sejak 1995.",
     },
     {
       slug: "blog-5",
@@ -59,7 +59,7 @@ export type Blog = {
       slug: "blog-7",
       image: "/images/blog/cover-7.jpg",
       author: "Dony Miller",
-      title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Indonesia Solusinya",
+      title: "Cari Mesin Second yang Aman dan Terpercaya? Miller Welding Indonesia Solusinya",
       description:
         "Membeli mesin welding second dapat menjadi alternatif untuk mendapatkan equipment berkualitas dengan investasi yang lebih efisien. Namun, kondisi dan riwayat penggunaan mesin perlu diperhatikan agar equipment tetap bekerja.  ",
     },
@@ -69,6 +69,6 @@ export type Blog = {
       author: "Dony Miller",
       title: "FAQ Garansi & Service Equipment",
       description:
-        "Setelah membeli equipment, dukungan service dan maintenance menjadi bagian penting untuk menjaga performa mesin tetap optimal. Miller Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan equipment yang .",
+        "Setelah membeli equipment, dukungan service dan maintenance menjadi bagian penting untuk menjaga performa mesin tetap optimal. Miller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan equipment yang .",
     },
   ];

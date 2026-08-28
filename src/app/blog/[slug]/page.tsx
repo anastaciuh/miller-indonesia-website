@@ -64,14 +64,15 @@ export default async function BlogDetailPage({
         {/* MAIN IMAGE */}
         {/* ================================================== */}
 
-        <div className="relative mt-6 aspect-[3/2] w-full overflow-hidden rounded-lg md:mt-8 md:aspect-[16/7]">
+        <div className="mt-6 w-full overflow-hidden rounded-lg md:mt-8">
 
-          <Image
-            src={blog.image}
-            alt={blog.title}
-            fill
-            className="object-cover"
-          />
+        <Image
+          src={blog.image}
+          alt={blog.title}
+          width={1600}
+          height={700}
+          className="h-auto w-full"
+        />
 
         </div>
 

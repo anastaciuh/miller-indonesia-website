@@ -299,11 +299,11 @@ export default function Footer() {
             <div className="flex items-center gap-3 text-[10px]">
 
               <Image
-                src="/images/home/logo-desktop.png"
+                src="/images/home/logo-mobile.png"
                 alt="Miller Indonesia"
                 width={110}
                 height={25}
-                className="h-auto w-[110px]"
+                className="h-auto w-[80px]"
               />
 
               <span className="h-5 w-px bg-white/80" />

@@ -11,14 +11,17 @@ const SERVICE_IMAGES = [
     mobile: "/images/home/mobile-1.jpg",
     desktop: "/images/home/desktop-1.jpg",
   },
+
   {
     mobile: "/images/home/mobile-2.jpg",
     desktop: "/images/home/desktop-2.jpg",
   },
+
   {
     mobile: "/images/home/mobile-3.jpg",
     desktop: "/images/home/desktop-3.jpg",
   },
+
   {
     mobile: "/images/home/mobile-4.jpg",
     desktop: "/images/home/desktop-4.jpg",
@@ -72,7 +75,7 @@ export default function ServiceCenterPage() {
               menurun? Arc tidak stabil? Atau sudah waktunya
               perawatan berkala? Serahkan pada Ahlinya! Kami
               melayani service, maintenance, troubleshooting,
-              dan perbaikan mesin las Miller dengan penanganan
+              perbaikan mesin las Miller, dan menyediakan sparepart dengan penanganan
               profesional untuk mengembalikan performa mesin
               Anda agar bekerja maksimal.
             </p>
@@ -128,7 +131,7 @@ export default function ServiceCenterPage() {
                 </li>
 
                 <li>
-                  Penggantian spare part sesuai kebutuhan
+                  Penggantian sparepart sesuai kebutuhan
                 </li>
 
               </ul>
@@ -197,7 +200,7 @@ export default function ServiceCenterPage() {
             </h2>
 
 
-            {/* DESKTOP H1 */}
+            {/* DESKTOP H2 */}
 
             <h2 className="hidden h2 font-bold text-black md:block">
               Lihat di Peta
@@ -207,16 +210,14 @@ export default function ServiceCenterPage() {
             {/* MOBILE B1 */}
 
             <p className="b1 mt-3 font-normal text-[#8B8B8B] md:hidden">
-              Jl Rajawali Selatan Raya no 1.
-              Pademangan, Jakarta Pusat.
+              PT. Duta Graha Miller, Jl. Rajawali Selatan Raya No.1 4, RT.4/RW.6, Gn. Sahari Utara, Kecamatan Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720
             </p>
 
 
-            {/* DESKTOP H3 */}
+            {/* DESKTOP B1 */}
 
             <p className="hidden b1 mt-3 font-normal text-[#8B8B8B] md:block">
-              Jl Rajawali Selatan Raya no 1.
-              Pademangan, Jakarta Pusat.
+            PT. Duta Graha Miller, Jl. Rajawali Selatan Raya No.1 4, RT.4/RW.6, Gn. Sahari Utara, Kecamatan Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720
             </p>
 
 
@@ -227,14 +228,14 @@ export default function ServiceCenterPage() {
             <div className="mt-6 overflow-hidden rounded-lg">
 
               <iframe
-                src="https://www.google.com/maps?q=Jl+Rajawali+Selatan+Raya+No+1,+Pademangan,+Jakarta+Pusat&output=embed"
+                src="https://www.google.com/maps?q=PT+Duta+Graha+Miller&output=embed"
                 width="100%"
                 height="100%"
                 loading="lazy"
                 allowFullScreen
                 referrerPolicy="no-referrer-when-downgrade"
                 className="h-[260px] w-full border-0 md:h-[380px]"
-                title="PT Dony Miller Welding"
+                title="PT Duta Graha Miller"
               />
 
             </div>

@@ -247,18 +247,18 @@ useEffect(() => {
             <div className="flex items-center gap-3 h-[40px]">
 
               <Image
-                  src="/images/home/logo-desktop.png"
+                  src="/images/home/logo-mobile.png"
                   alt="Miller Indonesia"
                   width={1920}
                   height={48}
-                  className="h-auto w-[145px]"
+                  className="h-auto w-[90px]"
                   priority
               />
 
               <span className="h-6 w-[1px] bg-white/80" />
 
               <span className="b2 text-white">
-                Distributor Miller Welding Machine Hypertherm Plasma Cutting
+                Distributor Miller Welding Machine & Hypertherm Plasma Cutting
               </span>
 
             </div>
