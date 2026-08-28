@@ -1,19 +1,35 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import Carousel from "@/components/layout/Carousel";
-
 import CategoryList from "@/components/layout/CategoryList";
-
 import BlogList from "@/components/layout/BlogList";
-
 import SeeMoreButton from "@/components/layout/SeeMoreButton";
 
 import { HOME_CAROUSEL_IMAGES } from "@/constants/home";
-
 import { HOME_CATEGORIES } from "@/constants/categories-home";
-
 import { BLOGS } from "@/constants/blog";
 
+export const metadata: Metadata = {
+  title: "Miller Welding Indonesia",
+
+  description:
+    "Miller Welding Indonesia adalah distributor solusi pengelasan dan pemotongan untuk berbagai kebutuhan industri di Indonesia, termasuk Miller Welding dan Hypertherm Plasma Cutting.",
+
+  openGraph: {
+    title: "Miller Welding Indonesia",
+    description:
+      "Distributor solusi pengelasan dan pemotongan untuk berbagai kebutuhan industri di Indonesia, termasuk Miller Welding dan Hypertherm Plasma Cutting.",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Miller Welding Indonesia",
+    description:
+      "Distributor solusi pengelasan dan pemotongan untuk berbagai kebutuhan industri di Indonesia, termasuk Miller Welding dan Hypertherm Plasma Cutting.",
+  },
+};
 
 export default function HomePage() {
   return (
