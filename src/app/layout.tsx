@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
+
 import { Inter } from "next/font/google";
 
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
+
 import Footer from "@/components/layout/Footer";
 
 const inter = Inter({
@@ -13,10 +15,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Miller Indonesia",
+  metadataBase: new URL("https://millerweldingindonesia.com"),
 
-  icons: {
-    icon: "/images/home/icon-black.png",
+  title: {
+    default: "Miller Indonesia",
+    template: "%s | Miller Indonesia",
   },
 
   description:
@@ -40,6 +43,25 @@ export const metadata: Metadata = {
     "Plasma Cutting",
     "Industrial Equipment",
   ],
+
+  icons: {
+    icon: "/images/home/icon-black.png",
+  },
+
+  openGraph: {
+    title: "Miller Indonesia",
+    description:
+      "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
+    siteName: "Miller Indonesia",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Miller Indonesia",
+    description:
+      "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
+  },
 };
 
 export const viewport: Viewport = {
@@ -61,11 +83,9 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col">
         <Navbar />
 
-         <main className="flex-1">
-
-           {children}
-
-         </main>
+        <main className="flex-1">
+          {children}
+        </main>
 
         <Footer />
       </body>

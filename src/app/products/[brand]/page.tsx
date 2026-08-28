@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 
 import CategoryList from "@/components/layout/CategoryList";
@@ -293,6 +294,48 @@ const BRANDS: Record<string, Brand> = {
       showContact: true,
     },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ brand: string }>;
+}): Promise<Metadata> {
+  const { brand } = await params;
+
+  const brandData = BRANDS[brand];
+
+  if (!brandData) {
+    return {
+      title: "Brand Tidak Ditemukan",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
+  const description = brandData.description
+    .filter(Boolean)
+    .join(" ");
+
+  return {
+    title: brandData.name,
+
+    description,
+
+    openGraph: {
+      title: `${brandData.name} | Miller Indonesia`,
+      description,
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${brandData.name} | Miller Indonesia`,
+      description,
+    },
+  };
+}
 
 export default async function BrandPage({
   params,

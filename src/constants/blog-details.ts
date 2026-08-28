@@ -198,7 +198,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
 {
     slug: "blog-4",
 
-    title: "MILLER WELDING INDONESIA – Distributor Miller Welding & Hypertherm Plasma Cutting",
+    title: "MILLER WELDING INDONESIA – Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
 
     image: "/images/blog/blog-4.jpg",
 
@@ -253,11 +253,6 @@ export const BLOG_DETAILS: BlogDetail[] = [
     author: "Dony Miller",
 
     content: [
-      {
-        type: "heading",
-        text: "Hypertherm Powermax85 SYNC: Performa Plasma Cutting untuk Pekerjaan Profesional",
-      },
-
       {
         type: "paragraph",
         text:
@@ -435,7 +430,7 @@ export const BLOG_DETAILS: BlogDetail[] = [
       {
         type: "paragraph",
         text:
-          "✔️ Miller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, dan perbaikan sparepart serta equipment untuk membantu menjaga performa mesin tetap optimal.",
+          "✔️ Miller Welding Indonesia menyediakan layanan service, maintenance, troubleshooting, sparepart dan equipment untuk membantu menjaga performa mesin tetap optimal.",
       },
 
       {
