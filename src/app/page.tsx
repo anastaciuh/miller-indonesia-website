@@ -41,21 +41,21 @@ export default function HomePage() {
         {/* MOBILE H1 */}
 
         <h1 className="h1 font-black text-black md:hidden">
-          Miller Indonesia
+          Miller Welding Indonesia
         </h1>
 
 
         {/* DESKTOP H1 */}
 
         <h1 className="hidden h1 font-black text-black md:block">
-          Miller Indonesia
+          Miller Welding Indonesia
         </h1>
 
 
         {/* MOBILE H3 */}
 
         <h2 className="h3 mt-2 font-bold text-black md:hidden">
-          Distributor Miller Welding &amp;
+          Distributor Miller Welding Machine &amp;
           Hypertherm Plasma Cutting
         </h2>
 
@@ -63,13 +63,13 @@ export default function HomePage() {
         {/* DESKTOP H2 */}
 
         <h2 className="hidden h2 leading-6 font-bold text-black md:block">
-          Distributor Miller Welding &amp;
+          Distributor Miller Welding Machine &amp;
           Hypertherm Plasma Cutting
         </h2>
 
 
         <p className="b1 mt-8 max-w-[850px] font-normal text-[#8B8B8B]">
-          Miller Indonesia merupakan distributor terpercaya solusi pengelasan dan pemotongan yang melayani
+          Miller Welding Indonesia merupakan distributor terpercaya solusi pengelasan dan pemotongan yang melayani
           berbagai industri di Indonesia. Dengan pengalaman yang luas, kami menyediakan produk dan solusi
           berkualitas untuk sektor minyak dan gas, pembangkit listrik, kilang, fabrikasi, perpipaan, serta
           berbagai industri lainnya.
