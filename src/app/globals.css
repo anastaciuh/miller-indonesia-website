@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 :root {
-
-/* COLORS VARIABLES */
+  /* COLORS VARIABLES */
 
   --background: #ffffff;
   --foreground: #171717;
@@ -13,66 +12,67 @@
   --deep-blue: #0C182A;
   --miller-blue: #1084C5;
 
-/* TYPOGRAPHY VARIABLES */
+  /* TYPOGRAPHY VARIABLES */
 
-/* Text Size Desktop */
---text-h1-desktop: 34px;
---text-h2-desktop: 24px;
---text-h3-desktop: 18px;
---text-b1-desktop: 16px;
---text-b2-desktop: 14px;
---text-button-desktop: 20px;
+  /* Text Size Desktop */
 
-/* Text Size Mobile */
---text-h1-mobile: 32px;
---text-h2-mobile: 26px;
---text-h3-mobile: 22px;
---text-h4-mobile: 18px;
---text-b1-mobile: 14px;
---text-b2-mobile: 12px;
+  --text-h1-desktop: 34px;
+  --text-h2-desktop: 24px;
+  --text-h3-desktop: 18px;
+  --text-b1-desktop: 16px;
+  --text-b2-desktop: 14px;
+  --text-button-desktop: 20px;
 
-/* Line Height Desktop */
---leading-h1-desktop: 60px;
---leading-h2-desktop: 48px;
---leading-h3-desktop: 36px;
---leading-b1-desktop: 22px;
---leading-b2-desktop: 18px;
---leading-button-desktop: 20px;
+  /* Text Size Mobile */
 
-/* Line Height Mobile */
---leading-h1-mobile: 40px;
---leading-h2-mobile: 32px;
---leading-h3-mobile: 32px;
---leading-h4-mobile: 26px;
---leading-b1-mobile: 24px;
---leading-b2-mobile: 20px;
+  --text-h1-mobile: 32px;
+  --text-h2-mobile: 26px;
+  --text-h3-mobile: 22px;
+  --text-h4-mobile: 18px;
+  --text-b1-mobile: 14px;
+  --text-b2-mobile: 12px;
 
-/* SPACING VARIABLES */
+  /* Line Height Desktop */
 
---space-xs: 4px;
---space-sm: 8px;
---space-md: 12px;
---space-lg: 16px;
---space-xl: 24px;
---space-2xl: 32px;
---space-3xl: 48px;
---space-4xl: 64px;
---space-5xl: 80px;
---space-6xl: 96px;
+  --leading-h1-desktop: 60px;
+  --leading-h2-desktop: 48px;
+  --leading-h3-desktop: 36px;
+  --leading-b1-desktop: 22px;
+  --leading-b2-desktop: 18px;
+  --leading-button-desktop: 20px;
 
+  /* Line Height Mobile */
+
+  --leading-h1-mobile: 40px;
+  --leading-h2-mobile: 32px;
+  --leading-h3-mobile: 32px;
+  --leading-h4-mobile: 26px;
+  --leading-b1-mobile: 24px;
+  --leading-b2-mobile: 20px;
+
+  /* SPACING VARIABLES */
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --space-5xl: 80px;
+  --space-6xl: 96px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-white: var(--white);
   --color-light-gray: var(--light-gray);
   --color-dark-gray: var(--dark-gray);
   --color-black: var(--black);
   --color-deep-blue: var(--deep-blue);
   --color-miller-blue: var(--miller-blue);
-
   --font-sans: var(--font-inter);
 }
 
@@ -83,8 +83,8 @@ body {
 }
 
 @layer components {
-
   /* Mobile (Default) */
+
   .h1 {
     @apply font-black;
     font-size: var(--text-h1-mobile);
@@ -109,6 +109,12 @@ body {
     line-height: var(--leading-h4-mobile);
   }
 
+  .page-title {
+    @apply font-extrabold;
+    font-size: var(--text-h2-mobile);
+    line-height: var(--leading-h2-mobile);
+  }
+
   .b1 {
     @apply font-normal;
     font-size: var(--text-b1-mobile);
@@ -127,9 +133,9 @@ body {
     line-height: var(--leading-button-desktop);
   }
 
-   /* Desktop */
-   @media (min-width: 768px) {
+  /* Desktop */
 
+  @media (min-width: 768px) {
     .h1 {
       font-size: var(--text-h1-desktop);
       line-height: var(--leading-h1-desktop);
@@ -145,6 +151,12 @@ body {
       line-height: var(--leading-h3-desktop);
     }
 
+    .page-title {
+      @apply font-black;
+      font-size: var(--text-h1-desktop);
+      line-height: var(--leading-h1-desktop);
+    }
+
     .b1 {
       font-size: var(--text-b1-desktop);
       line-height: var(--leading-b1-desktop);
@@ -154,9 +166,7 @@ body {
       font-size: var(--text-b2-desktop);
       line-height: var(--leading-b2-desktop);
     }
-
   }
-
 }
 
 .scrollbar-hide {

@@ -300,7 +300,7 @@ export default function Footer() {
 
               <Image
                 src="/images/home/logo-mobile.png"
-                alt="Miller Indonesia"
+                alt="Miller Welding Indonesia"
                 width={110}
                 height={25}
                 className="h-auto w-[80px]"
@@ -649,7 +649,7 @@ export default function Footer() {
 
               <Image
                 src="/images/home/logo-mobile.png"
-                alt="Miller Indonesia"
+                alt="Miller Welding Indonesia"
                 width={390}
                 height={80}
                 className="h-auto w-[150px]"

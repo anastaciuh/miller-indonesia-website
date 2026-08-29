@@ -45,8 +45,12 @@ export async function generateMetadata({
 
     description,
 
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
+
     openGraph: {
-      title: `${blog.title} | Miller Indonesia`,
+      title: `${blog.title} | Miller Welding Indonesia`,
       description,
       type: "article",
       images: [
@@ -59,7 +63,7 @@ export async function generateMetadata({
 
     twitter: {
       card: "summary_large_image",
-      title: `${blog.title} | Miller Indonesia`,
+      title: `${blog.title} | Miller Welding Indonesia`,
       description,
       images: [blog.image],
     },
@@ -86,11 +90,7 @@ export default async function BlogDetailPage({
         {/* TITLE */}
         {/* ================================================== */}
 
-        <h1 className="h2 font-black text-black md:hidden">
-          {blog.title}
-        </h1>
-
-        <h1 className="hidden leading-12 h1 max-w-[750px] font-black text-black md:block">
+        <h1 className="page-title max-w-[750px] font-black text-black md:leading-12">
           {blog.title}
         </h1>
 

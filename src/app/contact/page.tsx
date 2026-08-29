@@ -14,20 +14,24 @@ export const metadata: Metadata = {
   title: "Contact Us",
 
   description:
-    "Hubungi Miller Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
+    "Hubungi Miller Welding Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
 
+  alternates: {
+    canonical: "/contact",
+  },
+  
   openGraph: {
-    title: "Contact Us | Miller Indonesia",
+    title: "Contact Us | Miller Welding Indonesia",
     description:
-      "Hubungi Miller Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
+      "Hubungi Miller Welding Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Contact Us | Miller Indonesia",
+    title: "Contact Us | Miller Welding Indonesia",
     description:
-      "Hubungi Miller Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
+      "Hubungi Miller Welding Indonesia untuk konsultasi produk, demo mesin, uji coba peralatan, spesifikasi teknis, katalog, brosur, dan informasi penawaran harga.",
   },
 };
 
@@ -43,13 +47,7 @@ export default function ContactPage() {
           <div>
             {/* MOBILE H2 */}
 
-            <h1 className="h2 text-black pb-4 md:hidden">
-              Contact Us
-            </h1>
-
-            {/* DESKTOP H1 */}
-
-            <h1 className="hidden h1 text-black pb-4 md:block">
+            <h1 className="page-title pb-4 text-black">
               Contact Us
             </h1>
 
