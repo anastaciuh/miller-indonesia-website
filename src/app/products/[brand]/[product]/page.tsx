@@ -63,22 +63,26 @@ export async function generateMetadata({
     .join(", ");
 
   const description =
-    `Jelajahi produk ${productData.title} dari ${brandName} di Miller Indonesia, termasuk ${productNames}.`;
+    `Jelajahi produk ${productData.title} dari ${brandName} di Miller Welding Indonesia, termasuk ${productNames}.`;
 
   return {
     title: `${productData.title} ${brandName}`,
 
     description,
 
+    alternates: {
+      canonical: `/products/${brand}/${product}`,
+    },
+
     openGraph: {
-      title: `${productData.title} ${brandName} | Miller Indonesia`,
+      title: `${productData.title} ${brandName} | Miller Welding Indonesia`,
       description,
       type: "website",
     },
 
     twitter: {
       card: "summary_large_image",
-      title: `${productData.title} ${brandName} | Miller Indonesia`,
+      title: `${productData.title} ${brandName} | Miller Welding Indonesia`,
       description,
     },
   };

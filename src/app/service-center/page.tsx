@@ -11,20 +11,24 @@ export const metadata: Metadata = {
   title: "Service Centre",
 
   description:
-    "Service Centre Miller Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
+    "Service Centre Miller Welding Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
+
+  alternates: {
+     canonical: "/service-center",
+  },
 
   openGraph: {
-    title: "Service Centre | Miller Indonesia",
+    title: "Service Centre | Miller Welding Indonesia",
     description:
-      "Service Centre Miller Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
+      "Service Centre Miller Welding Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Service Centre | Miller Indonesia",
+    title: "Service Centre | Miller Welding Indonesia",
     description:
-      "Service Centre Miller Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
+      "Service Centre Miller Welding Indonesia melayani servis, maintenance, troubleshooting, perbaikan mesin las Miller, pemeriksaan menyeluruh, dan penggantian sparepart sesuai kebutuhan.",
   },
 };
 
@@ -72,13 +76,7 @@ export default function ServiceCenterPage() {
           <div>
             {/* MOBILE H2 */}
 
-            <h1 className="h2 font-black text-black md:hidden">
-              Service Centre
-            </h1>
-
-            {/* DESKTOP H1 */}
-
-            <h1 className="hidden h1 font-black text-black md:block">
+            <h1 className="page-title text-black">
               Service Centre
             </h1>
 

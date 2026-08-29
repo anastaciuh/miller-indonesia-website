@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   description:
     "Miller Welding Indonesia adalah distributor solusi pengelasan dan pemotongan untuk berbagai kebutuhan industri di Indonesia, termasuk Miller Welding dan Hypertherm Plasma Cutting.",
 
+  alternates: {
+    canonical: "/",
+  },
+
   openGraph: {
     title: "Miller Welding Indonesia",
     description:
@@ -49,21 +53,14 @@ export default function HomePage() {
 
 
       {/* ================================================== */}
-      {/* MILLER INDONESIA */}
+      {/* Miller Welding Indonesia */}
       {/* ================================================== */}
 
       <section className="container-custom px-6 pt-8 md:px-15 md:pt-10">
 
-        {/* MOBILE H1 */}
+        {/* MOBILE & DEKSTOP H1 */}
 
-        <h1 className="h1 font-black text-black md:hidden">
-          Miller Welding Indonesia
-        </h1>
-
-
-        {/* DESKTOP H1 */}
-
-        <h1 className="hidden h1 font-black text-black md:block">
+        <h1 className="h1 font-black text-black">
           Miller Welding Indonesia
         </h1>
 
@@ -137,7 +134,7 @@ export default function HomePage() {
 
           <Image
             src="/images/home/home-service-mobile.jpg"
-            alt="Miller Indonesia Service Centre"
+            alt="Miller Welding Indonesia Service Centre"
             fill
             className="object-cover"
           />
@@ -179,7 +176,7 @@ export default function HomePage() {
 
           <Image
             src="/images/home/home-service-desktop.jpg"
-            alt="Miller Indonesia Service Centre"
+            alt="Miller Welding Indonesia Service Centre"
             fill
             className="object-cover"
           />
@@ -255,7 +252,7 @@ export default function HomePage() {
 
             <Image
               src="/images/home/frame.jpg"
-              alt="Contact Miller Indonesia"
+              alt="Contact Miller Welding Indonesia"
               width={1200}
               height={1400}
               className="h-auto w-full object-cover"
@@ -278,7 +275,7 @@ export default function HomePage() {
 
             <Image
               src="/images/home/home-contact-desktop.png"
-              alt="Contact Miller Indonesia"
+              alt="Contact Miller Welding Indonesia"
               fill
               className="object-contain object-right-bottom"
             />

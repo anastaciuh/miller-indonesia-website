@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://millerweldingindonesia.com"),
 
   title: {
-    default: "Miller Indonesia",
-    template: "%s | Miller Indonesia",
+    default: "Miller Welding Indonesia",
+    template: "%s | Miller Welding Indonesia",
   },
 
   description:
@@ -27,6 +27,7 @@ export const metadata: Metadata = {
 
   keywords: [
     "Miller",
+    "Miller Welding Indonesia",
     "Miller Indonesia",
     "Servis Mesin Las Miller",
     "Mesin Las",
@@ -49,16 +50,16 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Miller Indonesia",
+    title: "Miller Welding Indonesia",
     description:
       "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
-    siteName: "Miller Indonesia",
+    siteName: "Miller Welding Indonesia",
     type: "website",
   },
-
+  
   twitter: {
     card: "summary_large_image",
-    title: "Miller Indonesia",
+    title: "Miller Welding Indonesia",
     description:
       "Distributor Miller Welding Machine & Hypertherm Plasma Cutting",
   },
@@ -77,15 +78,15 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${inter.variable} h-full antialiased`}
     >
       <body className="flex min-h-screen flex-col">
         <Navbar />
 
-        <main className="flex-1">
+        <div className="flex-1">
           {children}
-        </main>
+        </div>
 
         <Footer />
       </body>

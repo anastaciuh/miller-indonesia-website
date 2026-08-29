@@ -323,15 +323,19 @@ export async function generateMetadata({
 
     description,
 
+    alternates: {
+      canonical: `/products/${brand}`,
+    },
+    
     openGraph: {
-      title: `${brandData.name} | Miller Indonesia`,
+      title: `${brandData.name} | Miller Welding Indonesia`,
       description,
       type: "website",
     },
 
     twitter: {
       card: "summary_large_image",
-      title: `${brandData.name} | Miller Indonesia`,
+      title: `${brandData.name} | Miller Welding Indonesia`,
       description,
     },
   };
@@ -357,19 +361,26 @@ export default async function BrandPage({
         {/* Logo + Desktop Contact Button */}
         <div className="flex items-start justify-between gap-6">
           {/* Logo */}
-          <Image
-            src={brandData.logo}
-            alt={brandData.name}
-            width={brandData.logoWidth}
-            height={brandData.logoHeight}
-            className="h-auto w-[var(--mobile-logo-width)] object-contain md:w-[var(--desktop-logo-width)]"
-            style={
-              {
-                "--mobile-logo-width": `${brandData.mobileLogoWidth}px`,
-                "--desktop-logo-width": `${brandData.logoWidth}px`,
-              } as React.CSSProperties
-            }
-          />
+          {/* Brand H1 + Logo */}
+            <h1>
+              <span className="sr-only">
+                {brandData.name} | Miller Welding Indonesia
+              </span>
+
+              <Image
+                src={brandData.logo}
+                alt={brandData.name}
+                width={brandData.logoWidth}
+                height={brandData.logoHeight}
+                className="h-auto w-[var(--mobile-logo-width)] object-contain md:w-[var(--desktop-logo-width)]"
+                style={
+                  {
+                    "--mobile-logo-width": `${brandData.mobileLogoWidth}px`,
+                    "--desktop-logo-width": `${brandData.logoWidth}px`,
+                  } as React.CSSProperties
+                }
+              />
+            </h1>
 
           {/* Desktop Contact Button */}
           {brandData.showContact && (

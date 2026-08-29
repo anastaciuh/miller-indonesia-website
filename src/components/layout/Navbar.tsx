@@ -248,7 +248,7 @@ useEffect(() => {
 
               <Image
                   src="/images/home/logo-mobile.png"
-                  alt="Miller Indonesia"
+                  alt="Miller Welding Indonesia"
                   width={1920}
                   height={48}
                   className="h-auto w-[90px]"
@@ -549,7 +549,7 @@ useEffect(() => {
 
           <Image
             src="/images/home/logo-mobile.png"
-            alt="Miller Indonesia"
+            alt="Miller Welding Indonesia"
             width={1920}
             height={48}
             className="h-auto w-[105px] shrink-0"
